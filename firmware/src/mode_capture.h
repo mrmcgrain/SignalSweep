@@ -30,4 +30,15 @@ bool isCapturingToUsb();
  */
 void captureTick();
 
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+struct CaptureStatus {
+    bool active, pending, toSd;
+    uint32_t wifi, ble, drops, written, remain;
+    char file[13];
+    const char* error;
+};
+/** Small consistent snapshot for the standalone display and diagnostics. */
+CaptureStatus getCaptureStatus();
+#endif
+
 #endif // MODE_CAPTURE_H

@@ -122,6 +122,10 @@ void applyRandomMac() {
 // always comes back with both radios scanning.
 static bool bleScanOn  = true;
 static bool wifiScanOn = true;
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+bool isBleScanEnabled() { return bleScanOn; }
+bool isWifiScanEnabled() { return wifiScanOn; }
+#endif
 
 // CMD:SIGS is answered from bleSerialTick(), not from the router — see the
 // comment at the command. Written on the NimBLE host task, read on loop().
@@ -168,7 +172,11 @@ static volatile char     sdRmName[13]  = "";
 // Over USB nothing is dropped and the round trip per page was the ceiling
 // (~6 KB per request); 64 x 768 B = 48 KB a page. It holds loop() for well
 // under a second (64 x BULK_LINE_PACE_MS plus the card reads).
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+#define SD_GET_LINES_USB 8  // 6 KB page; no PSRAM, do not allocate the 48 KB desktop page
+#else
 #define SD_GET_LINES_USB 64
+#endif
 #define SD_GET_BATCH  768     // max raw bytes per SDF:/LOG: line (1024 base64 chars); USB always uses it
 // A short yield after each bulk base64 line (SDF:, LOG:), so the 1 Hz push
 // and the host task get a look in. It is NOT flow control any more: it was
@@ -195,6 +203,31 @@ static size_t bulkLineBytes(bool viaBle);   // defined beside negotiatedMtu
 String getBleConfigJson() {
     JsonDocument doc;
     doc["cfg"] = true;
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    doc["board"] = "cardputer-adv";
+    doc["capture_wifi_slots"] = 32; doc["capture_ble_slots"] = 8;
+    doc["capture_backend"] = "internal_ram";
+#elif CONFIG_IDF_TARGET_ESP32C5
+    doc["board"] = "esp32-c5";
+    doc["capture_backend"] = "psram";
+#else
+    doc["board"] = "esp32-s3";
+    doc["capture_backend"] = "psram";
+#endif
+#ifdef SIGNALSWEEP_NO_CAPTURE
+    doc["capture_supported"] = false;
+#elif defined(SIGNALSWEEP_CARDPUTER_ADV)
+    doc["capture_supported"] = true;
+#else
+    doc["capture_supported"] = ESP.getPsramSize() >= 3*1024*1024;
+#endif
+#ifdef SIGNALSWEEP_NO_SD
+    doc["sd_supported"] = false;
+#else
+    doc["sd_supported"] = true;
+#endif
+    doc["capture_max_bytes"] = 256;
+    doc["log_max"] = ALERT_LOG_MAX_RECS;
     doc["ble_name"] = getBleDeviceName();
     doc["rand_mac"] = getRandomMacEnabled();
     // Operator state, so a phone connecting to a board that has been running
@@ -771,6 +804,15 @@ void bleSerialTick() {
 
 void processIncomingCommand(const String& rawCommand) {
     if (rawCommand.length() == 0) return;
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    // Radio/identity/configuration changes cannot steal the capture callback
+    // or reboot while the SD stream is open. STOP remains available over BLE.
+    if (isCapturing() && rawCommand != "CMD:CAP:STOP" && rawCommand != "CMD:CFG" &&
+        rawCommand != "CMD:SD:LS" && !rawCommand.startsWith("CMD:SD:GET:")) {
+        sendReply("{\"cap\":{\"error\":\"stop capture before changing settings\"}}");
+        return;
+    }
+#endif
 
     ESP_LOGI(TAG, "Processing incoming command: %s", rawCommand.c_str());
 
@@ -996,6 +1038,12 @@ void processIncomingCommand(const String& rawCommand) {
             // it to the card instead (the only way over BLE). Deferred to loop().
             String rest = rawStr.substring(14);   // 14 = len("CMD:CAP:START:")
             bool toSd = rest.endsWith(":SD");
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+            String duration = toSd ? rest.substring(0,rest.length()-3) : rest;
+            bool valid = duration.length()>0 && duration.length()<=4;
+            for(unsigned i=0; i<duration.length(); ++i) valid &= duration[i]>='0' && duration[i]<='9';
+            if(!valid) { sendReply("{\"cap\":{\"error\":\"invalid duration\"}}"); return; }
+#endif
             requestCapture((uint32_t)rest.toInt(), toSd);
         } else if (rawStr == "CMD:CAP:STOP") {
             stopCapture();

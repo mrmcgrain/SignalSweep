@@ -89,3 +89,8 @@ void requestReboot();
 bool rebootDue();
 
 #endif // BLE_SERIAL_H
+
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+bool isBleScanEnabled();
+bool isWifiScanEnabled();
+#endif

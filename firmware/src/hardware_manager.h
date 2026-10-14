@@ -7,7 +7,13 @@
 #include <Arduino.h>
 #include "mode_manager.h"
 
-#if CONFIG_IDF_TARGET_ESP32C5
+#if defined(SIGNALSWEEP_CARDPUTER_ADV)
+// Keep eight virtual pixels for existing alert patterns; collapse to the
+// brightest pixel on the ADV's single onboard RGB LED. Audio uses ES8311.
+#define NEOPIXEL_PIN 21
+#define NEOPIXEL_COUNT 8
+#define SWEEP_TASK_CORE 1
+#elif CONFIG_IDF_TARGET_ESP32C5
 // XIAO ESP32-C5: the same D1/D2 pads as the S3 harness, different GPIOs
 // (variants/XIAO_ESP32C5/pins_arduino.h: D1 = GPIO0, D2 = GPIO25).
 #define NEOPIXEL_PIN D1

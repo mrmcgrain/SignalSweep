@@ -1,0 +1,5041 @@
+[
+  {
+    "id": "generic-00",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "70:c9:4e",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "70:C9:4E:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-01",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "3c:91:80",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "3C:91:80:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-02",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "d8:f3:bc",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "D8:F3:BC:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-03",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "80:30:49",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "80:30:49:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-04",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "b8:35:32",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B8:35:32:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-05",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "14:5a:fc",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "14:5A:FC:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-06",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "74:4c:a1",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "74:4C:A1:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-07",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "08:3a:88",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "08:3A:88:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-08",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "9c:2f:9d",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "9C:2F:9D:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-09",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "c0:35:32",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "C0:35:32:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-10",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "94:08:53",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "94:08:53:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-11",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "e4:aa:ea",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E4:AA:EA:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-12",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "f4:6a:dd",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "F4:6A:DD:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-13",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "24:b2:b9",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "24:B2:B9:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-14",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "00:f4:8d",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:F4:8D:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-15",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "d0:39:57",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "D0:39:57:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-16",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "e8:d0:fc",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E8:D0:FC:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-17",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "e0:4f:43",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E0:4F:43:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-18",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "b8:1e:a4",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B8:1E:A4:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-19",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "70:08:94",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "70:08:94:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-20",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "58:8e:81",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "58:8E:81:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-21",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "ec:1b:bd",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "EC:1B:BD:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-22",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "58:00:e3",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "58:00:E3:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-23",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "90:35:ea",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "90:35:EA:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-24",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "5c:93:a2",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "5C:93:A2:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-25",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "64:6e:69",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "64:6E:69:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-26",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "48:27:ea",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "48:27:EA:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-27",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "14:b5:cd",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "14:B5:CD:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-28",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "04:0d:84",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "04:0D:84:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-29",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "1c:34:f1",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "1C:34:F1:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-30",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "38:5b:44",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "38:5B:44:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-31",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "94:34:69",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "94:34:69:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-32",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "b4:e3:f9",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B4:E3:F9:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-33",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "f0:82:c0",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "F0:82:C0:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-34",
+    "rules": [
+      {
+        "name": "Flock Safety MAC",
+        "category": "Flock Safety",
+        "oui": "e0:0a:f6",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E0:0A:F6:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-35",
+    "rules": [
+      {
+        "name": "Flock Safety MAC (registered block)",
+        "category": "Flock Safety",
+        "oui": "b4:1e:52",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B4:1E:52:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-36",
+    "rules": [
+      {
+        "name": "SoundThinking",
+        "category": "SoundThinking",
+        "oui": "d4:11:d6",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "D4:11:D6:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "SoundThinking",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-37",
+    "rules": [
+      {
+        "name": "Flock battery (auth service)",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "e8ccbb38-9532-46a8-9fe5-1814df172e6f",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "11076f2e17df1418e59fa846329538bbcce8",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-37-missing-0",
+    "rules": [
+      {
+        "name": "Flock battery (auth service)",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "e8ccbb38-9532-46a8-9fe5-1814df172e6f",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-38",
+    "rules": [
+      {
+        "name": "Flock battery (safety service)",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "20c944c1-add2-42d7-a638-967ee9a26ff6",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "1107f66fa2e97e9638a6d742d2adc144c920",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-38-missing-0",
+    "rules": [
+      {
+        "name": "Flock battery (safety service)",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "20c944c1-add2-42d7-a638-967ee9a26ff6",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-39",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "flock",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0609666c6f636b",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-39-missing-0",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "flock",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-40",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "pigvision",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0a09706967766973696f6e",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-40-missing-0",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "pigvision",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-41",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "fs_",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "040966735f",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-41-missing-0",
+    "rules": [
+      {
+        "name": "Flock BLE Name",
+        "category": "Flock Safety",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "fs_",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-42",
+    "rules": [
+      {
+        "name": "Axon Enterprise device",
+        "category": "Axon",
+        "oui": "00:25:df",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:25:DF:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-43",
+    "rules": [
+      {
+        "name": "Axon Body 2 camera (pairing)",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 0,
+        "ssid_prefix": "AB2-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000044142322d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-44",
+    "rules": [
+      {
+        "name": "Axon Body 3 camera (pairing)",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 0,
+        "ssid_prefix": "AB3-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000044142332d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-45",
+    "rules": [
+      {
+        "name": "Axon Body 4 camera (pairing)",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 0,
+        "ssid_prefix": "AB4-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000044142342d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-46",
+    "rules": [
+      {
+        "name": "Axon device hotspot",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 0,
+        "ssid_prefix": "AXON-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000541584f4e2d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-47",
+    "rules": [
+      {
+        "name": "Axon Signal System",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fe6c"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03036cfe",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-47-missing-0",
+    "rules": [
+      {
+        "name": "Axon Signal System",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fe6c"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-48",
+    "rules": [
+      {
+        "name": "Axon Signal System",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fe6d"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03036dfe",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axon",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-48-missing-0",
+    "rules": [
+      {
+        "name": "Axon Signal System",
+        "category": "Axon",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fe6d"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-49",
+    "rules": [
+      {
+        "name": "Cradlepoint Router",
+        "category": "Fleet / Infrastructure",
+        "oui": "00:30:44",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:30:44:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-50",
+    "rules": [
+      {
+        "name": "Peplink Router",
+        "category": "Fleet / Infrastructure",
+        "oui": "00:1a:dd",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:1A:DD:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-51",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "00:a0:d5",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:A0:D5:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-52",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "28:a3:31",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "28:A3:31:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-53",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "50:13:9d",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "50:13:9D:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-54",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "64:ce:6e",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "64:CE:6E:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-55",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "84:db:2f",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "84:DB:2F:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-56",
+    "rules": [
+      {
+        "name": "Sierra Wireless Infrastructure",
+        "category": "Fleet / Infrastructure",
+        "oui": "cc:93:4a",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": ""
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "CC:93:4A:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Fleet / Infrastructure",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "generic-57",
+    "rules": [
+      {
+        "name": "Genetec (AutoVu / Sharp)",
+        "category": "Genetec ALPR",
+        "oui": "00:0a:b1",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:0A:B1:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Genetec ALPR",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-58",
+    "rules": [
+      {
+        "name": "Genetec (AutoVu / Sharp)",
+        "category": "Genetec ALPR",
+        "oui": "00:bf:15",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:BF:15:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Genetec ALPR",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-59",
+    "rules": [
+      {
+        "name": "Genetec (AutoVu / Sharp)",
+        "category": "Genetec ALPR",
+        "oui": "0c:bf:15",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "0C:BF:15:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Genetec ALPR",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-60",
+    "rules": [
+      {
+        "name": "Neology (ALPR / tolling)",
+        "category": "Neology ALPR",
+        "oui": "00:17:3d",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:17:3D:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Neology ALPR",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-61",
+    "rules": [
+      {
+        "name": "WatchGuard Video camera",
+        "category": "WatchGuard body cam",
+        "oui": "00:1d:96",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:1D:96:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "WatchGuard body cam",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-62",
+    "rules": [
+      {
+        "name": "Digital Ally camera",
+        "category": "Digital Ally body cam",
+        "oui": "00:23:bd",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:23:BD:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Digital Ally body cam",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-63",
+    "rules": [
+      {
+        "name": "Ubicquia (streetlight node)",
+        "category": "Ubicquia",
+        "oui": "94:7b:be",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "94:7B:BE:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Ubicquia",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-64",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "00:04:7d",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:04:7D:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-65",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "00:18:85",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:18:85:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-66",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "00:1f:92",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:1F:92:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-67",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "4c:cc:34",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "4C:CC:34:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-68",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "b8:e2:8c",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B8:E2:8C:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-69",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "10:74:6f",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "10:74:6F:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-70",
+    "rules": [
+      {
+        "name": "Motorola Solutions device",
+        "category": "Motorola Solutions",
+        "oui": "9c:86:2b",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "9C:86:2B:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Motorola Solutions",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-71",
+    "rules": [
+      {
+        "name": "Verkada camera",
+        "category": "Verkada",
+        "oui": "e0:a7:00",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E0:A7:00:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Verkada",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-72",
+    "rules": [
+      {
+        "name": "Avigilon Alta device",
+        "category": "Avigilon Alta",
+        "oui": "70:1a:d5",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "70:1A:D5:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Avigilon Alta",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-73",
+    "rules": [
+      {
+        "name": "Axis Communications camera",
+        "category": "Axis Communications",
+        "oui": "00:40:8c",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:40:8C:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axis Communications",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-74",
+    "rules": [
+      {
+        "name": "Axis Communications camera",
+        "category": "Axis Communications",
+        "oui": "b8:a4:4f",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "B8:A4:4F:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axis Communications",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-75",
+    "rules": [
+      {
+        "name": "Axis Communications camera",
+        "category": "Axis Communications",
+        "oui": "ac:cc:8e",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "AC:CC:8E:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axis Communications",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-76",
+    "rules": [
+      {
+        "name": "Axis Communications camera",
+        "category": "Axis Communications",
+        "oui": "e8:27:25",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "E8:27:25:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Axis Communications",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-77",
+    "rules": [
+      {
+        "name": "Ray-Ban / Oakley Meta glasses",
+        "category": "Smart glasses",
+        "oui": "",
+        "mfg_id": "0x0D53",
+        "device_name": "",
+        "service_uuid": "fd5f",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04ff530d0003035ffd",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Smart glasses",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-77-missing-0",
+    "rules": [
+      {
+        "name": "Ray-Ban / Oakley Meta glasses",
+        "category": "Smart glasses",
+        "oui": "",
+        "mfg_id": "0x0D53",
+        "device_name": "",
+        "service_uuid": "fd5f",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03035ffd",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-77-missing-1",
+    "rules": [
+      {
+        "name": "Ray-Ban / Oakley Meta glasses",
+        "category": "Smart glasses",
+        "oui": "",
+        "mfg_id": "0x0D53",
+        "device_name": "",
+        "service_uuid": "fd5f",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04ff530d00",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-78",
+    "rules": [
+      {
+        "name": "Snap Spectacles",
+        "category": "Smart glasses",
+        "oui": "",
+        "mfg_id": "0x03C2",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04ffc20300",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Smart glasses",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-78-missing-0",
+    "rules": [
+      {
+        "name": "Snap Spectacles",
+        "category": "Smart glasses",
+        "oui": "",
+        "mfg_id": "0x03C2",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-79",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3081",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038130",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-79-missing-0",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3081",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-79-attack-off",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3081",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038130",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-80",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3082",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038230",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-80-missing-0",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3082",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-80-attack-off",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3082",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038230",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-81",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3083",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038330",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "generic-81-missing-0",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3083",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-81-attack-off",
+    "rules": [
+      {
+        "name": "Flipper Zero (service UUID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "3083",
+        "weight": 80
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03038330",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-82",
+    "rules": [
+      {
+        "name": "STM32WB address (Flipper Zero uses this)",
+        "category": "Hacking gear",
+        "oui": "80:e1:26",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "80:E1:26:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-82-attack-off",
+    "rules": [
+      {
+        "name": "STM32WB address (Flipper Zero uses this)",
+        "category": "Hacking gear",
+        "oui": "80:e1:26",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "80:E1:26:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-83",
+    "rules": [
+      {
+        "name": "STM32WB address (Flipper Zero uses this)",
+        "category": "Hacking gear",
+        "oui": "80:e1:27",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "80:E1:27:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-83-attack-off",
+    "rules": [
+      {
+        "name": "STM32WB address (Flipper Zero uses this)",
+        "category": "Hacking gear",
+        "oui": "80:e1:27",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "80:E1:27:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-84",
+    "rules": [
+      {
+        "name": "Flipper Devices (company ID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "0x0E29",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04ff290e00",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-84-missing-0",
+    "rules": [
+      {
+        "name": "Flipper Devices (company ID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "0x0E29",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-84-attack-off",
+    "rules": [
+      {
+        "name": "Flipper Devices (company ID)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "0x0E29",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04ff290e00",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-85",
+    "rules": [
+      {
+        "name": "Flipper Devices (MAC)",
+        "category": "Hacking gear",
+        "oui": "0c:fa:22",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "0C:FA:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-85-attack-off",
+    "rules": [
+      {
+        "name": "Flipper Devices (MAC)",
+        "category": "Hacking gear",
+        "oui": "0c:fa:22",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "0C:FA:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-86",
+    "rules": [
+      {
+        "name": "Name contains Flipper",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "flipper",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0809666c6970706572",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-86-missing-0",
+    "rules": [
+      {
+        "name": "Name contains Flipper",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "flipper",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-86-attack-off",
+    "rules": [
+      {
+        "name": "Name contains Flipper",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "flipper",
+        "service_uuid": "",
+        "weight": 60
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0809666c6970706572",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-87",
+    "rules": [
+      {
+        "name": "Pineapple management AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "Pineapple_"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000a50696e656170706c655f",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-87-attack-off",
+    "rules": [
+      {
+        "name": "Pineapple management AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "Pineapple_"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000a50696e656170706c655f",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-88",
+    "rules": [
+      {
+        "name": "OUI-Spy selector AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "oui-spy"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000076f75692d737079",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-88-attack-off",
+    "rules": [
+      {
+        "name": "OUI-Spy selector AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "oui-spy"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000076f75692d737079",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-89",
+    "rules": [
+      {
+        "name": "OUI-Spy Detector AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "snoopuntothem"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000d736e6f6f70756e746f7468656d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-89-attack-off",
+    "rules": [
+      {
+        "name": "OUI-Spy Detector AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "snoopuntothem"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000d736e6f6f70756e746f7468656d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-90",
+    "rules": [
+      {
+        "name": "OUI-Spy Foxhunter AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "foxhunter"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff00112233445500112233445500000000000000000000000000000009666f7868756e746572",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-90-attack-off",
+    "rules": [
+      {
+        "name": "OUI-Spy Foxhunter AP",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "foxhunter"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff00112233445500112233445500000000000000000000000000000009666f7868756e746572",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-91",
+    "rules": [
+      {
+        "name": "OUI-Spy capture AP (PCAP / BLE Sniff)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "ouispy-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000076f75697370792d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-91-attack-off",
+    "rules": [
+      {
+        "name": "OUI-Spy capture AP (PCAP / BLE Sniff)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 70,
+        "ssid_prefix": "ouispy-"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000076f75697370792d",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-92",
+    "rules": [
+      {
+        "name": "'pwned' SSID (ESP deauther default)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60,
+        "ssid_prefix": "pwned"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000570776e6564",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 60
+    }
+  },
+  {
+    "id": "generic-92-attack-off",
+    "rules": [
+      {
+        "name": "'pwned' SSID (ESP deauther default)",
+        "category": "Hacking gear",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "",
+        "weight": 60,
+        "ssid_prefix": "pwned"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000570776e6564",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-93",
+    "rules": [
+      {
+        "name": "Tile Tracker",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "feed"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0303edfe",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-93-missing-0",
+    "rules": [
+      {
+        "name": "Tile Tracker",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "feed"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-94",
+    "rules": [
+      {
+        "name": "Tile Tracker",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "feec"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0303ecfe",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-94-missing-0",
+    "rules": [
+      {
+        "name": "Tile Tracker",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "feec"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "generic-95",
+    "rules": [
+      {
+        "name": "Samsung SmartTag",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fd5a"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "03035afd",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "generic-95-missing-0",
+    "rules": [
+      {
+        "name": "Samsung SmartTag",
+        "category": "Tracker",
+        "oui": "",
+        "mfg_id": "",
+        "device_name": "",
+        "service_uuid": "fd5a"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "airtag-long",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1eff4c00121900000000000000000000000000000000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 80,
+      "matched_rule": "Apple Find My Tracker"
+    }
+  },
+  {
+    "id": "apple-short-not-tracker",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "07ff4c0012020002",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "Tile Tracker",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "matched_rule": "Tile Tracker",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "Samsung SmartTag",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "04165afd01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "matched_rule": "Samsung SmartTag",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "Samsung SmartTag (setup)",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "041659fd01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "matched_rule": "Samsung SmartTag (setup)",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "Google Find My Tracker",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1816aafe400000000000000000000000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "matched_rule": "Google Find My Tracker",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "Google Find My Tracker (unwanted-tracking mode)",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1816aafe410000000000000000000000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "matched_rule": "Google Find My Tracker (unwanted-tracking mode)",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "eddystone-not-tracker",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1816aafe000000000000000000000000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "penguin-legacy",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "130950656e6775696e2d31323334353637383930",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "penguin-modern",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0b093132333435363738393008ffc809544e313233",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "serial-alone-not-penguin",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0b0930313032303030303030",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "ble-remote-id-basic",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1e16faff0d010212544553542d44524f4e452d313233000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123"
+    }
+  },
+  {
+    "id": "wifi-remote-id-basic",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000dd1e903ae60d010212544553542d44524f4e452d313233000000000000000000",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123"
+    }
+  },
+  {
+    "id": "remote-id-short-presence",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0516faff0d01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "flock-probe-ie",
+    "rules": [
+      {
+        "name": "Flock test",
+        "category": "Flock Safety",
+        "oui": "B8:27:EB"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "40000000ffffffffffffb827eb334455b827eb33445500000000dd07506f9a16030103",
+        "radio": "WiFi",
+        "mac": "B8:27:EB:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 100,
+      "matched_rule": "Flock probe + IE"
+    }
+  },
+  {
+    "id": "consumer-ie-not-flock",
+    "rules": [
+      {
+        "name": "Flock test",
+        "category": "Flock Safety",
+        "oui": "B8:27:EB"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "40000000ffffffffffff00112233445500112233445500000000dd07506f9a16030103",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 30
+    }
+  },
+  {
+    "id": "flock-ssid",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000c466c6f636b2d313233343536",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "flocknation-negative",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000000b466c6f636b4e6174696f6e",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "pwngrid-json",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffffdeadbeefdeaddeadbeefdead0000000000000000000000000000de377b226e616d65223a202266697874757265222c202270776e645f746f74223a20372c2022677269645f76657273696f6e223a202231227d",
+        "radio": "WiFi",
+        "mac": "DE:AD:BE:EF:DE:AD",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 100
+    }
+  },
+  {
+    "id": "pwngrid-gzip",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffffdeadbeefdeaddeadbeefdead0000000000000000000000000000de461f8b08000000000002ffab56ca4bcc4d55b252504acbac28292d4a55d251502a28cf4b892fc92f010a9b03b9e9459929f165a945c599f9792095864ab5005a09347937000000df0101",
+        "radio": "WiFi",
+        "mac": "DE:AD:BE:EF:DE:AD",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 100
+    }
+  },
+  {
+    "id": "deauth-burst",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1006,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1007,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1008,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1009,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1010,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1011,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1012,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1013,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1014,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "deauth-gated",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1006
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1007
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1008
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1009
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1010
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1011
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1012
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1013
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1014
+      }
+    ],
+    "expect": {
+      "absent": true
+    }
+  },
+  {
+    "id": "karma",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "50000000ffffffffffff001122334455001122334455000000000000000000000000000000057465737430",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "attack": true
+      },
+      {
+        "hex": "50000000ffffffffffff001122334455001122334455000000000000000000000000000000057465737431",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001,
+        "attack": true
+      },
+      {
+        "hex": "50000000ffffffffffff001122334455001122334455000000000000000000000000000000057465737432",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002,
+        "attack": true
+      },
+      {
+        "hex": "50000000ffffffffffff001122334455001122334455000000000000000000000000000000057465737433",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "ble-popup-spam",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:00",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:01",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:02",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:03",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:04",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:05",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:06",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1006,
+        "address_type": 1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:07",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1007,
+        "address_type": 1,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "mac": "BLE popup spam",
+      "type": "Hacking gear",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "public-apple-no-spam",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:00",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:01",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:02",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:03",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:04",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:05",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:06",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1006,
+        "address_type": 0,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:07",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1007,
+        "address_type": 0,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "truncated-ad",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "ff16faff",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "truncated-ie",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000ddff903ae6",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "tag-flood",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:00",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:01",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:02",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:03",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:04",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:05",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005
+      },
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "C0:00:00:00:00:20",
+        "rssi": -45,
+        "ch": 6,
+        "at": 32000
+      }
+    ],
+    "expect": {
+      "mac": "Tag flood: Tile",
+      "type": "Tracker",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "split-ad-response-sticky",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "08ffc809544e313233",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      },
+      {
+        "hex": "09096f7264696e617279",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1100
+      }
+    ],
+    "expect": {
+      "type": "Flock Safety",
+      "confidence": 80,
+      "cid": 2504
+    }
+  },
+  {
+    "id": "cross-radio-corroboration",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      },
+      {
+        "hex": "80000000ffffffffffff001122334455001122334455000000000000000000000000000000066e6f726d616c",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1100
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 80,
+      "protocol": "BLE+WiFi"
+    }
+  },
+  {
+    "id": "millis-wrap",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967288,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967289,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967290,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967291,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967292,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967293,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967294,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4294967295,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 0,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 2,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 3,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 4,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 5,
+        "attack": true
+      },
+      {
+        "hex": "c0000000ffffffffffff00112233445500112233445500000100",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 6,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "Hacking gear",
+      "confidence": 90
+    }
+  },
+  {
+    "id": "ble-remote-id-stream",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "1e16faff0d010212544553542d44524f4e452d313233000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      },
+      {
+        "hex": "1e16faff0d0112005a147ec0b1f71300283ebd00009808f807000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001
+      },
+      {
+        "hex": "1e16faff0d014200806fe813406a4dbd010000000000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002
+      },
+      {
+        "hex": "1e16faff0d015200544553542d4f50455241544f5200000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003
+      },
+      {
+        "hex": "1e16faff0d0132005465737420666978747572650000000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123",
+      "operator_id": "TEST-OPERATOR",
+      "self_id": "Test fixture",
+      "lat": 33.5,
+      "lng": -112,
+      "alt": 100,
+      "agl": 20,
+      "heading": 90,
+      "speed": 5,
+      "op_lat": 33.4,
+      "op_lng": -111.9
+    }
+  },
+  {
+    "id": "ble-remote-id-packed",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "8516faff0d01f219050212544553542d44524f4e452d31323300000000000000000012005a147ec0b1f71300283ebd00009808f807000000000000320054657374206669787475726500000000000000000000004200806fe813406a4dbd0100000000000000000000000000005200544553542d4f50455241544f5200000000000000000000",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123",
+      "operator_id": "TEST-OPERATOR",
+      "self_id": "Test fixture",
+      "lat": 33.5,
+      "lng": -112,
+      "alt": 100,
+      "agl": 20,
+      "heading": 90,
+      "speed": 5,
+      "op_lat": 33.4,
+      "op_lng": -111.9
+    }
+  },
+  {
+    "id": "wifi-remote-id-packed",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "80000000ffffffffffff0011223344550011223344550000000000000000000000000000dd85903ae60d01f219050212544553542d44524f4e452d31323300000000000000000012005a147ec0b1f71300283ebd00009808f807000000000000320054657374206669787475726500000000000000000000004200806fe813406a4dbd0100000000000000000000000000005200544553542d4f50455241544f5200000000000000000000",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123",
+      "operator_id": "TEST-OPERATOR",
+      "self_id": "Test fixture",
+      "lat": 33.5,
+      "lng": -112,
+      "alt": 100,
+      "agl": 20,
+      "heading": 90,
+      "speed": 5,
+      "op_lat": 33.4,
+      "op_lng": -111.9
+    }
+  },
+  {
+    "id": "wifi-remote-id-nan",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "d0000000516f9a010000001122334455506f9a0100ff00000409506f9a13038b008869199d92090100108101f219050212544553542d44524f4e452d31323300000000000000000012005a147ec0b1f71300283ebd00009808f807000000000000320054657374206669787475726500000000000000000000004200806fe813406a4dbd0100000000000000000000000000005200544553542d4f50455241544f52000000000000000000000e040001000201",
+        "radio": "WiFi",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Drone",
+      "confidence": 90,
+      "uas_id": "TEST-DRONE-123",
+      "operator_id": "TEST-OPERATOR",
+      "self_id": "Test fixture",
+      "lat": 33.5,
+      "lng": -112,
+      "alt": 100,
+      "agl": 20,
+      "heading": 90,
+      "speed": 5,
+      "op_lat": 33.4,
+      "op_lng": -111.9
+    }
+  },
+  {
+    "id": "unknown-apple-no-spam",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:00",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:01",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1001,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:02",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1002,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:03",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1003,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:04",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1004,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:05",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1005,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:06",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1006,
+        "address_type": -1,
+        "attack": true
+      },
+      {
+        "hex": "04ff4c0007",
+        "radio": "BLE",
+        "mac": "00:00:00:00:00:07",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1007,
+        "address_type": -1,
+        "attack": true
+      }
+    ],
+    "expect": {
+      "type": "",
+      "confidence": 0
+    }
+  },
+  {
+    "id": "unicode-name",
+    "rules": [
+      {
+        "name": "unicode rule",
+        "category": "Tracker",
+        "device_name": "Fixture \ud83c\udfaf"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0d094669787475726520f09f8eaf",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "name": "Fixture \ud83c\udfaf",
+      "confidence": 70
+    }
+  },
+  {
+    "id": "service-data-not-uuid-list",
+    "rules": [
+      {
+        "name": "UUID rule",
+        "category": "Tracker",
+        "service_uuid": "f00d"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "04160df001",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "confidence": 0
+    }
+  },
+  {
+    "id": "tile-data-single-evidence",
+    "rules": [
+      {
+        "name": "UUID rule",
+        "category": "Tracker",
+        "service_uuid": "feed"
+      }
+    ],
+    "steps": [
+      {
+        "hex": "0416edfe01",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "type": "Tracker",
+      "confidence": 80
+    }
+  },
+  {
+    "id": "complete-name-preferred",
+    "rules": [],
+    "steps": [
+      {
+        "hex": "0e09436f6d706c657465206e616d65060853686f7274",
+        "radio": "BLE",
+        "mac": "00:11:22:33:44:55",
+        "rssi": -45,
+        "ch": 6,
+        "at": 1000
+      }
+    ],
+    "expect": {
+      "name": "Complete name",
+      "confidence": 0
+    }
+  }
+]

@@ -1,0 +1,74 @@
+name: Publish companion app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - 'site/app-redirect.html'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: companion-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.repository == 'mrmcgrain/SignalSweep'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install app dependencies
+        working-directory: app
+        run: npm ci
+      - name: Check companion app
+        run: |
+          node app/selftest.js
+          node app/source-test.js
+          node app/native-lifecycle-test.js
+          node app/location-test.js
+      - name: Build companion app
+        working-directory: app
+        run: npm run build
+      - name: Assemble Pages artifact
+        env:
+          DEPLOY_COMMIT: ${{ github.sha }}
+          DEPLOY_REPOSITORY: ${{ github.repository }}
+        run: |
+          mkdir -p _site/app
+          cp -R app/dist/. _site/app/
+          cp site/app-redirect.html _site/index.html
+          touch _site/.nojekyll
+          node -e "require('fs').writeFileSync('_site/deployment.json', JSON.stringify({commit:process.env.DEPLOY_COMMIT,repository:process.env.DEPLOY_REPOSITORY}) + '\n')"
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,6 +2,40 @@
 
 All notable changes to SignalSweep are recorded here.
 
+## [Unreleased]
+
+### Hosting
+
+- 2026-10-14: Added a dedicated GitHub Actions Pages workflow for the mrmcgrain fork, publishing the companion app under /SignalSweep/app/ with a root redirect and source-commit metadata. Restricted the combined firmware/APK release workflow to upstream and excluded private diagnostics from source publication.
+
+### Fixed
+
+- 2026-10-14: One-shot location waits up to 60 seconds for cold GNSS acquisition, explicitly requires a fresh fix and shows clear timeout guidance. Existing 50 m pin limit retained. Location success/error/browser/disabled-services regressions pass; updated Local APK installed. Indoor phone diagnostic timed out; outdoor fix remains unverified.
+
+- 2026-10-14: Source switching closes previous USB/BLE transports before opening the next, preventing mixed board telemetry or occupied USB ports. Actual app lifecycle regression and physical ADVUSB → S3BLE → ADVUSB test pass. Rebuilt signed LocalAPK installed and168JNI fixtures pass.
+
+- 2026-10-14: Cardputer ADV SD/WUI package declares and mounts private ssweepfs storage rather than formatting a shared application filesystem. Sized private storage and flash ring for the existing launcher layout; added foreground USB hardware diagnostics and private backup ignore rule. Functional WUI/SD installation and live screen/keyboard/speaker/CSV checks passed. ADV USB export pages reduced to 6 KB after an observed allocation failure; application-only update and persisted CSV export verified.
+
+- 2026-10-14: Preserve DevKitC XMC bootloader correction automatically after generation and before PlatformIO uploads, with exact-image hash guards and unknown-image refusal. Build and upload-hook checks passed; fresh physical upload pending missing COM8.
+
+- 2026-10-14: Verified DevKitC N16R8 XMC 20:7018 bootloader diagnostic correction, guarded preparation and rollback, full region readback and BLE runtime evidence. Normal upload integration was subsequently added.
+
+### Added
+
+- 2026-10-14: Added DEVELOPMENT-SUMMARY.md for future GitHub publication, explaining the ADV/S3/Android changes, their reasons, verified bench results, remaining limits and publication decisions.
+
+- 2026-10-14: Identity-checked full-flash backup and guarded application-only update tools with existing-slot/image-fit/table checks and device digest verification of preserved boot/table. Hardware capture runner now supports original ESP32-S3 alongside ADV and rejects unsupported SD destinations. ADV and originalS3 shared-engine images device-digest verified with original boot/table preservation; both PC and directOnePlusUSB raw recordings saved/count/format checked, allzero buffer drops. Full8MBADV/16MBS3 backups and allpriorcopies retained.
+
+- 2026-10-14: Full NetHunter raw scan/PCAP and BLE recording, saved capture library/export, fixed root ownership cleanup and shared Android/ESP32/ADV detector callbacks including all96 generic defaults, specialized trackers, Flock, OpenDroneID, PwnGrid and attack windows. 168 fixtures pass on installed OnePlus JNI and sanitized host profiles; live dual-band capture/readback, lifecycle cleanup and original-S3 BLE swap/control verified. ADV fresh swap and board USB file delivery remain unverified.
+
+- 2026-10-14: Interchangeable scanner capabilities across ADV/original S3 and foreground Android phone-only BLE/Wi-Fi AP scan. Complete 96 generic default-rule export, explicit observation save, native lifecycle/source fixtures and separate Local debug package. ADV/DevKitC and APK builds, companion tests and OnePlus native acquisition passed. NetHunter raw adapter and specialized detector parity remain unfinished; live kernel advertises monitor/dual-band support.
+
+- 2026-10-14: Cardputer ADV capture backend uses bounded internal-RAM queues, foreground SD/USB output, passive BLE and visible packet-drop counters. Added standalone capture controls, safe detector handoff/restoration, SD failure reporting and capture-enabled Launcher package. Existing Android companion USB save/analyze protocol retained. ADV/XIAO builds and sanitized capture lifecycle/record tests passed. Refreshed full backup, expanded current app slot in free space, and installed with device hash verification; real SD/USB packet readback and scanner resumption passed. Android phone delivery remains pending.
+
+- 2026-10-14: Standalone Cardputer ADV scanner with list/detail/hunt UI, TCA8418 keyboard controls, ES8311 speaker alerts, battery status and optional SD alert CSV logging. Dedicated no-PSRAM build, bounded target snapshots and table, explicit packet-capture rejection, host regression tests and app/factory packaging helper.
+
+- 2026-10-14: Cardputer ADV port assessment in docs/cardputer-adv-port.md, covering hardware integration, radio limits, memory constraints and validation gates.
+
 ## [0.9.1] — 2026-10-13 — One logo, one palette, everywhere
 
 ### Changed -- One brand everywhere: SignalSweep brand kit v1.0
@@ -3480,3 +3514,5 @@ payload roughly halved.
 
 Dates are ISO (YYYY-MM-DD). The app is pre-1.0 (`0.0.0`); this is the first
 recorded changelog and covers work to date.
+
+

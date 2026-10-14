@@ -63,6 +63,7 @@ typedef uint64_t mz_uint64;
 
 #define MZ_ASSERT(x) assert(x)
 #define MZ_MALLOC(x) malloc(x)
+#define MZ_REALLOC(p, n) realloc(p, n)
 #define MZ_FREE(x) free(x)
 
 #define MZ_MAX(a, b) (((a) > (b)) ? (a) : (b))

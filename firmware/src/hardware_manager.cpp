@@ -3,6 +3,9 @@
 
 #include "hardware_manager.h"
 #include <Adafruit_NeoPixel.h>
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+#include <M5Cardputer.h>
+#endif
 #include <Preferences.h>
 #include <esp_log.h>
 #include <freertos/FreeRTOS.h>
@@ -23,6 +26,24 @@ static const char *TAG = "HardwareManager";
 #define LED_DIM_BRIGHTNESS  8
 
 static Adafruit_NeoPixel strip(NEOPIXEL_COUNT, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+static Adafruit_NeoPixel onboardPixel(1, NEOPIXEL_PIN, NEO_GRB + NEO_KHZ800);
+static void showPixels() {
+    // getPixelColor reverses the virtual strip's brightness scaling. Apply
+    // that brightness once to the physical pixel.
+    int best = 0, sum = -1;
+    for (int i = 0; i < NEOPIXEL_COUNT; ++i) {
+        uint32_t c = strip.getPixelColor(i);
+        int s = ((c >> 16) & 255) + ((c >> 8) & 255) + (c & 255);
+        if (s > sum) { best = i; sum = s; }
+    }
+    onboardPixel.setBrightness(strip.getBrightness());
+    onboardPixel.setPixelColor(0, strip.getPixelColor(best));
+    onboardPixel.show();
+}
+#else
+static void showPixels() { strip.show(); }
+#endif
 static SemaphoreHandle_t hwMutex = NULL;
 static TaskHandle_t hwTaskHandle = NULL;
 
@@ -101,10 +122,26 @@ static inline void buzzerTone(uint16_t freq) {
     uint8_t th = themeId;
     if (th != THEME_CLASSIC)
         freq = (uint16_t)constrain((int)(freq * THEMES[th].pitch), 200, 6000);
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    static const uint8_t volumes[] = {45, 100, 180};
+    static uint16_t playingFreq = 0;
+    M5Cardputer.Speaker.setVolume(volumes[buzzerVol]);
+    if (!M5Cardputer.Speaker.isPlaying(0) || playingFreq != freq) {
+        M5Cardputer.Speaker.tone(freq, UINT32_MAX, 0, true);
+        playingFreq = freq;
+    }
+#else
     ledcWriteTone(BUZZ_LEDC, freq);                  // also writes 50 % duty...
     ledcWrite(BUZZ_LEDC, VOL_DUTY[buzzerVol]);       // ...so the volume goes after it
+#endif
 }
-static inline void buzzerOff() { ledcWrite(BUZZ_LEDC, 0); }
+static inline void buzzerOff() {
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    if (M5Cardputer.Speaker.isPlaying(0)) M5Cardputer.Speaker.stop(0);
+#else
+    ledcWrite(BUZZ_LEDC, 0);
+#endif
+}
 
 struct Note {
     uint16_t freq;       // Hz (0 = rest/silence)
@@ -650,7 +687,7 @@ static void HardwareManagerTask(void *pvParameters) {
             }
             if (memcmp(lastFrame, strip.getPixels(), sizeof(lastFrame)) != 0) {
                 memcpy(lastFrame, strip.getPixels(), sizeof(lastFrame));
-                strip.show();
+                showPixels();
             }
 
             xSemaphoreGive(hwMutex);
@@ -665,7 +702,10 @@ void hardwareInit() {
         hwMutex = xSemaphoreCreateMutex();
     }
 
-#if CONFIG_IDF_TARGET_ESP32C5
+#if defined(SIGNALSWEEP_CARDPUTER_ADV)
+    // GPIO38 powers the LED and display backlight; M5.begin owns it.
+    onboardPixel.begin();
+#elif CONFIG_IDF_TARGET_ESP32C5
     ledcAttach(BUZZER_PIN, 2000, 10);
 #else
     ledcSetup(BUZZ_LEDC, 2000, 10);
@@ -675,7 +715,7 @@ void hardwareInit() {
 
     strip.begin();
     strip.setBrightness(50);
-    strip.show();  // blank; the task plays the boot sweep
+    showPixels();  // blank; the task plays the boot sweep
     animCat = ANIM_BOOT;
     animStart = millis();
 

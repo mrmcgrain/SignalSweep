@@ -66,3 +66,14 @@ hardware/
 firmware/src/bench/
 *.local.ini
 docs/SignalSweep-Brand/
+
+# Private physical-device firmware backups
+firmware/backup/cardputer-adv-*/
+firmware/backup/esp32-*/
+firmware/backup/esp32-original-16mb.bin
+
+# Private hardware diagnostics, flash dumps and downloaded bench dependencies
+firmware/diagnostics/
+
+# Local browser verification artifacts
+output/playwright/

@@ -56,6 +56,10 @@ import { spawnSync } from 'node:child_process';
 // '#bands .band'. Nothing threw, nothing logged, the tabs just did nothing.
 // Any selector app.js anchors to an id has to exist in index.html.
 import { readFileSync } from 'node:fs';
+function readDetector(path) {
+    const url=new URL(path,import.meta.url);
+    return readFileSync(url,'utf8').replace(/#include "(detector\/[^"]+\.inc)"/g,(_,name)=>readFileSync(new URL(name,new URL('../firmware/src/',import.meta.url)),'utf8'));
+}
 const appSrc = readFileSync(new URL('./public/app.js', import.meta.url), 'utf8');
 const htmlSrc = readFileSync(new URL('./index.html', import.meta.url), 'utf8');
 
@@ -137,8 +141,9 @@ const cfgKeys = [...readFileSync(new URL('../firmware/src/ble_serial.cpp', impor
     .matchAll(/doc\["(\w+)"\]\s*=/g)].map(m => m[1]);
 // Deliberately unread: `cfg` is the discriminator itself.
 const cfgIgnored = new Set(['cfg']);
+const sourceAdapterSrc = readFileSync(new URL('./public/scan-sources.js', import.meta.url), 'utf8');
 const cfgUnread = cfgKeys.filter(k => !cfgIgnored.has(k) &&
-    !appSrc.includes('cfg.' + k) && !appSrc.includes('data.' + k));
+    !(appSrc + sourceAdapterSrc).includes('cfg.' + k) && !appSrc.includes('data.' + k));
 if (cfgKeys.length < 5 || cfgUnread.length) {
     console.log('FAIL: CMD:CFG fields the app never reads:', cfgUnread,
                 '(parsed', cfgKeys.length, 'keys)');
@@ -212,7 +217,7 @@ console.log('[signalsweep self-test] app reads every CMD:CFG field: ok');
 // C5 port: the bench-measured radio settings must stay behind the C5 guard, and
 // the S3 path must keep its own values (the S3 build is byte-identical by contract).
 {
-    const wsrc = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+    const wsrc = readDetector('../firmware/src/mode_watchers_watch.cpp');
     const c5 = [...wsrc.matchAll(/#if CONFIG_IDF_TARGET_ESP32C5\r?\n([\s\S]*?)(?=#else|#endif)/g)].map(m => m[1]).join('\n');
     const fail = [];
     let hop = '';
@@ -239,7 +244,7 @@ console.log('[signalsweep self-test] C5 radio settings guarded: ok');
     const fail = [];
     const radioH = readFileSync(new URL('../firmware/src/c5_radio.h', import.meta.url), 'utf8');
     if (!/BAND_BOTH\s*=\s*0,\s*BAND_24\s*=\s*1,\s*BAND_5\s*=\s*2/.test(radioH)) fail.push('SweepBand order changed');
-    const wsrc = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+    const wsrc = readDetector('../firmware/src/mode_watchers_watch.cpp');
     if (!/doc\["band"\]\s*=\s*getBand\(\)/.test(wsrc)) fail.push('the 1 Hz push does not carry band');
     if (!/prefs\.putUChar\("band"/.test(wsrc) || !/prefs\.getUChar\("band"/.test(wsrc)) fail.push('band is not persisted in sweep-st');
     const bsrc = readFileSync(new URL('../firmware/src/ble_serial.cpp', import.meta.url), 'utf8');
@@ -268,7 +273,7 @@ fwThemes.forEach((t, i) => {
     if (("'" + t.slice(6).toLowerCase() + "'") !== appThemes[i]) themeFail.push(t + ' vs ' + appThemes[i]);
     if (!htmlSrc.includes('data-theme="' + i + '"')) themeFail.push('no chip for theme ' + i);
 });
-if (!/doc\["theme"\]\s*=\s*getTheme\(\)/.test(readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8')))
+if (!/doc\["theme"\]\s*=\s*getTheme\(\)/.test(readDetector('../firmware/src/mode_watchers_watch.cpp')))
     themeFail.push('the 1 Hz push does not carry theme');
 if (/<input[^>]*data-theme=/.test(htmlSrc)) themeFail.push('a theme control is an <input>');
 // The theme is applied to the finished frame, like the LED mode, so no draw
@@ -312,7 +317,7 @@ console.log('[signalsweep self-test] theme ids match firmware ThemeId: ok');
 // ignores the volume or races it. ledcWriteTone() also writes 50 % itself, so
 // the volume duty must be written AFTER it.
 const volFail = [];
-if (/\b(no)?[tT]one\(/.test(hwSrc.replace(/\/\/.*$/gm, '').replace(/buzzerTone\(|ledcWriteTone\(/g, '')))
+if (/(?<!\.)\b(no)?[tT]one\(/.test(hwSrc.replace(/\/\/.*$/gm, '').replace(/buzzerTone\(|ledcWriteTone\(/g, '')))
     volFail.push('tone()/noTone() is back in hardware_manager.cpp');
 const volDuty = ((hwSrc.match(/static const uint16_t VOL_DUTY\[\] = \{([^}]*)\}/) || [])[1] || '').split(',').filter(s => s.trim());
 if (volDuty.length !== 3) volFail.push('VOL_DUTY must have 3 levels, has ' + volDuty.length);
@@ -351,7 +356,7 @@ if (!/THEME_CLASSIC \|\| ledMode == LED_ONE \|\| eggScene/.test(applyThemeBody))
     eggFail.push('applyTheme recolours the flashlight');
 // Nobody holding a flashlight is hunting. Gated in noteAlert(), like the hunt
 // target, so the alert log keeps matching what you actually heard.
-const noteAlertBody = (readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8')
+const noteAlertBody = (readDetector('../firmware/src/mode_watchers_watch.cpp')
     .match(/static bool noteAlert\([^)]*\) \{[\s\S]*?\n\}/) || [''])[0];
 if (!/getEggScene\(\) != EGG_OFF/.test(noteAlertBody))
     eggFail.push('alerts still sound during the easter egg');
@@ -386,7 +391,7 @@ console.log('[signalsweep self-test] vendor lists ship: ok');
 // firmware. So assert the invariants against the real source, the same way the
 // BEEP_BITS and CMD:CFG checks above do. The emitter (over-the-air, two boards)
 // is the runtime half of the proof.
-const fw = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+const fw = readDetector('../firmware/src/mode_watchers_watch.cpp');
 const flockFail = [];
 
 // Schema must be bumped, or deployed boards keep the stale rule set for ever.
@@ -525,7 +530,7 @@ console.log('[signalsweep self-test] USB connect/capture recovery intact: ok');
 // radio callback (a LittleFS write is tens of ms; both callbacks must stay fast,
 // and the BLE one holds watchersMutex).
 const logSrc = readFileSync(new URL('../firmware/src/alert_log.h', import.meta.url), 'utf8');
-const wwSrc  = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+const wwSrc  = readDetector('../firmware/src/mode_watchers_watch.cpp');
 const hwSrc2 = readFileSync(new URL('../firmware/src/hardware_manager.h', import.meta.url), 'utf8');
 const logFail = [];
 
@@ -608,7 +613,7 @@ console.log('[signalsweep self-test] alert log record + write path: ok');
     // lost the tail of a 3.6 KB SD:GET over BLE), and every high-rate USB
     // line goes through the mutex (the push landed inside an SDF: line).
     const bs = readFileSync(new URL('../firmware/src/ble_serial.cpp', import.meta.url), 'utf8');
-    const ww = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+    const ww = readDetector('../firmware/src/mode_watchers_watch.cpp');
     if ((bs.match(/vTaskDelay\(pdMS_TO_TICKS\(BULK_LINE_PACE_MS\)\)/g) || []).length !== 2) rs.push('sendSdFile/sendAlertLog no longer pause BULK_LINE_PACE_MS per line');
     const getLines = +((bs.match(/#define SD_GET_LINES\s+(\d+)/) || [])[1]);
     if (!(getLines >= 1 && getLines <= 8)) rs.push('SD_GET_LINES (lines per CMD:SD:GET page) must be 1..8');
@@ -628,12 +633,12 @@ console.log('[signalsweep self-test] alert log record + write path: ok');
 {
     const rs = [];
     const ad = readFileSync(new URL('../firmware/src/attack_detectors.h', import.meta.url), 'utf8');
-    const ww = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+    const ww = readDetector('../firmware/src/mode_watchers_watch.cpp');
     for (const c of ['TAGFLOOD_QUIET_MS\\s+30000u', 'TAGFLOOD_MAX_HITS\\s+3\\b', 'TAGFLOOD_EVIDENCE\\s+6\\b',
                      'TAGFLOOD_WINDOW_MS\\s+300000u', 'TAGFLOOD_HOLD_MS\\s+300000u'])
         if (!new RegExp('#define ' + c).test(ad)) rs.push('tag-flood constant drifted: ' + c);
     if (!/upsertAttackTarget\(String\(TAGFLOOD_TITLE ": "\)[^;]*"Tracker"\);/.test(ww)) rs.push('the tag-flood row no longer files under Tracker');
-    if ((ww.match(/if \(!floodMuted\) noteAlertForTarget/g) || []).length !== 2) rs.push('tag flood must gate exactly the two BLE noteAlertForTarget calls');
+    if ((ww.match(/if \((?:added && )?!floodMuted\) noteAlertForTarget/g) || []).length !== 2) rs.push('tag flood must gate exactly the two BLE noteAlertForTarget calls');
     if (/attackDetect[^\n]*tagFlood|tagFlood[^\n]*attackDetect/.test(ww)) rs.push('tag flood must not be Attack-gated');
     // A sentinel row's "mac" is a name, so alertLogParseMac rejects it and the
     // one alert the flood row sounds never reached the flash log or the card.
@@ -651,7 +656,7 @@ console.log('[signalsweep self-test] alert log record + write path: ok');
     const rs = [];
     const bs = readFileSync(new URL('../firmware/src/ble_serial.cpp', import.meta.url), 'utf8');
     const cap = readFileSync(new URL('../firmware/src/mode_capture.cpp', import.meta.url), 'utf8');
-    const ww = readFileSync(new URL('../firmware/src/mode_watchers_watch.cpp', import.meta.url), 'utf8');
+    const ww = readDetector('../firmware/src/mode_watchers_watch.cpp');
     const appSrc = readFileSync(new URL('./public/app.js', import.meta.url), 'utf8');
     const nc = (bs.match(/static bool notifyChunk\([\s\S]*?\n\}/) || [''])[0];
     if (!/ble_hs_mbuf_from_flat\(/.test(nc) || !/ble_gattc_notify_custom\(/.test(nc)) rs.push('notifyChunk no longer calls the host API where the result is visible');
@@ -705,7 +710,7 @@ console.log('[signalsweep self-test] alert log record + write path: ok');
 // updateWatchersSignaturesJson() rebuilds each rule field by field, so a field
 // it forgets is silently dropped the first time the app saves.
 const sigFail = [];
-const wwHdr = readFileSync(new URL('../firmware/src/mode_watchers_watch.h', import.meta.url), 'utf8');
+const wwHdr = readDetector('../firmware/src/mode_watchers_watch.h');
 if (!/int\s+weight\s*=\s*0;/.test(wwHdr)) sigFail.push('WatcherSignature has no `int weight = 0;`');
 if (!/String\s+ssidPrefix;/.test(wwHdr)) sigFail.push('WatcherSignature has no `String ssidPrefix;`');
 if (!/sig\.weight\s*=\s*s\["weight"\]/.test(wwSrc)) sigFail.push('loader never reads "weight"');
@@ -972,8 +977,8 @@ console.log('[signalsweep self-test] attack-gear rules gated by the Attack toggl
 // AirPods on public/static addresses is not spam) and use the shared window fn.
 {
     const bs = [];
-    if (!/attackDetect && !pubAddr && advertisedDevice->haveManufacturerData\(\)[\s\S]{0,400}\(uint8_t\)mfgd\[2\] == 0x07 \|\| \(uint8_t\)mfgd\[2\] == 0x0F/.test(wwSrc))
-        bs.push('BLE-spam detector does not gate on !pubAddr + 0x07/0x0F');
+    if (!/attackDetect && addressType == BLE_ADDR_RANDOM && advertisedDevice->haveManufacturerData\(\)[\s\S]{0,400}\(uint8_t\)mfgd\[2\] == 0x07 \|\| \(uint8_t\)mfgd\[2\] == 0x0F/.test(wwSrc))
+        bs.push('BLE-spam detector does not gate on an explicit random address + 0x07/0x0F');
     if (!/bleSpamNote\(&bleSpamState, key, rssi, now\)/.test(wwSrc)) bs.push('BLE-spam detector does not pass rssi to bleSpamNote (the AirPods-crowd floor)');
     if (bs.length) { console.log('FAIL: ble-spam detector:', bs); process.exit(1); }
     console.log('[signalsweep self-test] BLE popup-spam detector keys on random 0x07/0x0F: ok');

@@ -12,6 +12,7 @@
 #include "alert_log.h"
 #include "sd_store.h"
 #include "crash_report.h"
+#include "cardputer_ui.h"
 
 #if CONFIG_IDF_TARGET_ESP32C5
 #define BOOT_BUTTON_PIN BOOT_PIN   // GPIO28 on the XIAO ESP32-C5 (esp32-hal.h)
@@ -32,6 +33,8 @@ void setup() {
 
     pinMode(BOOT_BUTTON_PIN, INPUT_PULLUP);
 
+    cardputerUiInit();
+
     // 0. Initialize Hardware Manager (NeoPixel GPIO 21 & Buzzer GPIO 3)
     hardwareInit();
 
@@ -50,7 +53,12 @@ void setup() {
     // OUI / device-name / service-UUID / manufacturer-ID rule was dead, and the
     // only detections that could fire were the two hardcoded checks in the
     // Wi-Fi callback. `true` formats on failure so a fresh board self-heals.
-    if (!LittleFS.begin(true)) {
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    const bool fsMounted = LittleFS.begin(true, "/littlefs", 10, "ssweepfs");
+#else
+    const bool fsMounted = LittleFS.begin(true);
+#endif
+    if (!fsMounted) {
         Serial.println("[FS] LittleFS mount FAILED — signature rules unavailable.");
     } else {
         Serial.println("[FS] LittleFS mounted.");
@@ -79,6 +87,10 @@ void setup() {
 
     // 2. Persist hardware tier and start the always-on detector.
     modeManagerInit();
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    Serial.printf("[ADV] scanner ready; free_heap=%u min_heap=%u capture=bounded RAM\n",
+                  ESP.getFreeHeap(), ESP.getMinFreeHeap());
+#endif
 }
 
 // Hold BOOT for this long to wipe the device back to factory defaults.
@@ -160,6 +172,7 @@ void loop() {
     // Resume the detector after a capture ends. The capture task deletes itself,
     // so it can't restart the detector from inside; it flags this instead.
     captureTick();
+    cardputerUiTick();
 
     // USB host session, chirped like the BLE link. A plugged-in cable is not a
     // connection: the USB-Serial-JTAG stack's idea of "connected" is a host
@@ -198,7 +211,7 @@ void loop() {
             abort();
 #endif
         } else if (cmd.length() > 0) {
-            processIncomingCommand(cmd);
+            if (!cardputerHandleUsbCommand(cmd)) processIncomingCommand(cmd);
         }
     }
     if (serialHost && millis() - serialHostMs > SERIAL_HOST_TIMEOUT_MS) {

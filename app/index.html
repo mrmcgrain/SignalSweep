@@ -975,6 +975,7 @@
         </header>
 
         <main id="tab-sweep" class="tab active">
+        <p id="scan-source-note" class="set-note" aria-live="polite"></p>
 
         <!-- Live scope -->
         <div class="scope-head">
@@ -1079,6 +1080,7 @@
                         <button class="ctrl-btn cap-dur" data-secs="600" onclick="pickCapDuration(600)">10 min</button>
                     </div>
                     <button class="ctrl-btn on" id="cap-start-btn" style="width:100%;margin-top:14px;" onclick="startCapture()">◉ Capture this environment</button>
+                    <button class="ctrl-btn" id="phone-save-observations" style="width:100%;margin-top:10px;" onclick="savePhoneObservations()" hidden>Save phone observations</button>
                 </div>
 
                 <div id="cap-running" style="display:none;">
@@ -1096,6 +1098,8 @@
                 <div id="cap-done" style="display:none;">
                     <div style="text-align:center;font-size:1.4rem;margin:8px 0;">✓ Capture saved</div>
                     <p class="set-note" id="cap-summary"></p>
+                    <button id="native-cap-export" class="ctrl-btn" onclick="exportPhoneCapture()" hidden>Export PCAP and BLE log</button>
+                    <p id="native-cap-path" class="set-note" style="white-space:pre-wrap;word-break:break-all;" hidden></p>
                     <div id="cap-analysis" style="margin:10px 0;"></div>
                     <div id="cap-log-step">
                     <h3 class="set-label">2 · Log this device</h3>
@@ -1113,6 +1117,11 @@
             </section>
 
             <section class="finder-card">
+                <section id="native-captures" hidden>
+                    <h3 class="set-label">Phone packet captures</h3>
+                    <p class="set-note">Full Wi-Fi PCAP and raw BLE advertisements. Tap a recording to export both files.</p>
+                    <div id="native-capture-list"></div>
+                </section>
                 <h3 class="set-label">Survey log (<span id="finds-count">0</span>)</h3>
                 <p class="set-note">Every survey on this phone, newest first. Tap one to analyze it again or log a photo against it. Photos and locations are encrypted behind your PIN.</p>
                 <div id="finds-list" style="margin:0.6rem 0;"></div>
@@ -1428,10 +1437,19 @@
                 <div class="modal-icon-glow">
                     <svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M12 2v20l5.5-5.5L12 11l5.5-5.5L12 2z"/></svg>
                 </div>
-                <h2>Connect your board</h2>
-                <p>Over the air or down a cable. Your pick.</p>
+                <h2>Choose scanner</h2>
+                <p>Cardputer, ESP32-S3, or this Android phone.</p>
             </div>
             <div class="modal-actions">
+                <button class="btn-conn-option" id="btnNetHunterScan" onclick="startPhoneScan(true)" hidden>
+                    <div class="btn-left"><div style="text-align:left;"><div>NetHunter raw scan</div><div style="font-size:0.75rem;font-weight:normal;opacity:0.8;">Shared decoders · raw Wi-Fi + BLE · releases Wi-Fi until Stop</div></div></div><span class="btn-arrow">&rarr;</span>
+                </button>
+                <button class="btn-conn-option" id="btnPhoneScan" onclick="startPhoneScan()" hidden>
+                    <div class="btn-left"><div style="text-align:left;">
+                        <div>Scan with this phone</div>
+                        <div style="font-size:0.75rem;font-weight:normal;opacity:0.8;">BLE advertisements and Wi-Fi access points</div>
+                    </div></div><span class="btn-arrow">&rarr;</span>
+                </button>
                 <button class="btn-conn-option primary" onclick="connectWebBluetooth()">
                     <div class="btn-left">
                         <svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M12 2v20l5.5-5.5L12 11l5.5-5.5L12 2z"/></svg>
@@ -1571,6 +1589,7 @@
     <!-- Toast -->
     <div id="toast"><span id="toast-icon">✓</span><span id="toast-msg"></span></div>
 
+    <script defer src="/scan-sources.js"></script>
     <script defer src="/app.js"></script>
 </body>
 </html>

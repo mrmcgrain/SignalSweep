@@ -1,3 +1,18 @@
+#ifdef SIGNALSWEEP_NO_CAPTURE
+#include "mode_capture.h"
+#include "ble_serial.h"
+void requestCapture(uint32_t, bool) {
+    const String reply = "{\"cap\":{\"error\":\"packet capture disabled on this board\"}}";
+    sendUsbLine(reply);
+    sendBleSerial(reply);
+}
+void stopCapture() {}
+bool isCapturing() { return false; }
+bool isCapturingToUsb() { return false; }
+void captureTick() {}
+#elif defined(SIGNALSWEEP_CARDPUTER_ADV)
+// Internal-RAM foreground backend lives in mode_capture_adv.cpp.
+#else
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Copyright (C) 2026 B0z0dcl0wn and the SignalSweep contributors
 //
@@ -505,3 +520,5 @@ void captureTick() {
         startCapture(secs, toSd);
     }
 }
+
+#endif // SIGNALSWEEP_NO_CAPTURE

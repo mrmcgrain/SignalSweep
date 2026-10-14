@@ -33,7 +33,7 @@
 // body below is unmodified from upstream (only the #include changed, to
 // pull in this tree's self-contained miniz_tinfl.h instead of miniz.h).
 
-#if defined(CONFIG_IDF_TARGET_ESP32C5)
+#if defined(CONFIG_IDF_TARGET_ESP32C5) || defined(SIGNALSWEEP_PORTABLE)
 
 #include "miniz_tinfl.h"
 #include <stdlib.h>

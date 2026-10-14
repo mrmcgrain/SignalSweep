@@ -32,9 +32,15 @@ try {
 if (verCode < 1) verCode = 1
 
 android {
+    buildFeatures { buildConfig true }
+    ndkVersion "30.0.15729638"
+    externalNativeBuild {
+        cmake { path "src/main/cpp/CMakeLists.txt"; version "4.1.2" }
+    }
     namespace = "com.signalsweep.app"
     compileSdk = rootProject.ext.compileSdkVersion
     defaultConfig {
+        ndk { abiFilters 'arm64-v8a', 'armeabi-v7a', 'x86_64' }
         applicationId "com.signalsweep.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
@@ -58,6 +64,11 @@ android {
         }
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".local"
+            versionNameSuffix "-local"
+            resValue "string", "app_name", "SignalSweep Local"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'

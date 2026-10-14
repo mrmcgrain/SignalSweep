@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 // Copyright (C) 2026 B0z0dcl0wn and the SignalSweep contributors
 
-import { Capacitor } from '@capacitor/core';
+import { Capacitor, registerPlugin } from '@capacitor/core';
 import { BleClient } from '@capacitor-community/bluetooth-le';
 import { Geolocation } from '@capacitor/geolocation';
 import { App } from '@capacitor/app';
@@ -18,6 +18,7 @@ import 'leaflet/dist/leaflet.css';
 // records which areas you downloaded, which is the sort of trail this app
 // exists to not keep.
 window.Capacitor = Capacitor;
+window.PhoneScanner = registerPlugin('PhoneScanner');
 window.BleClient = BleClient;
 window.Geolocation = Geolocation;
 window.App = App;

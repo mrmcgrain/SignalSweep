@@ -1,3 +1,5 @@
+> Personal development fork: [open the companion web app](https://mrmcgrain.github.io/SignalSweep/app/). See [fork hosting](docs/github-pages.md) and the [development summary](DEVELOPMENT-SUMMARY.md) for local changes. The original project's release and flasher links below remain upstream resources.
+
 <p align="center">
   <img src="docs/img/banner.png" alt="SignalSweep: the app's Sweep, Survey and Settings tabs on a phone, a drone, a Flock probe and trackers in the live list">
 </p>

@@ -5,6 +5,11 @@
 #include <SPI.h>
 #include <SD.h>
 
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+// LCD uses a separate SPI bus inside M5GFX.
+static SPIClass cardSpi(FSPI);
+#endif
+
 #define SD_DIR "/SIGSWEEP"
 
 static SemaphoreHandle_t sdMutex = NULL;
@@ -54,22 +59,42 @@ static void fail() {
 }
 
 bool sdProbe() {
+#ifdef SIGNALSWEEP_NO_SD
+    state = SD_NONE;
+    freeMB = 0;
+    return false;
+#else
     SdLock l;
     if (stream) stream.close();
     streamName[0] = 0;
     SD.end();
+#ifdef SIGNALSWEEP_CARDPUTER_ADV
+    cardSpi.end();
+    cardSpi.begin(40, 39, 14, 12);
+    bool mounted = SD.begin(12, cardSpi, 4000000);
+#else
     SPI.end();
-    SPI.begin(D8, D9, D10, D3);   // SCK, MISO, MOSI, SS
-    if (!SD.begin(D3, SPI, 4000000)) { state = SD_NONE; freeMB = 0; return false; }
-    if (!SD.exists(SD_DIR) && !SD.mkdir(SD_DIR)) { state = SD_ERROR; SD.end(); return false; }
+    SPI.begin(D8, D9, D10, D3);
+    bool mounted = SD.begin(D3, SPI, 4000000);
+#endif
+    if (!mounted) {
+        state = SD_NONE;
+        freeMB = 0;
+        return false;
+    }
+    if (!SD.exists(SD_DIR) && !SD.mkdir(SD_DIR)) {
+        state = SD_ERROR;
+        SD.end();
+        return false;
+    }
 #ifdef SD_FAKE_LIMIT_BYTES
     fakeWritten = 0;
 #endif
     refreshFree();
     state = SD_OK;
     return true;
+#endif
 }
-
 uint8_t sdState() { return state; }
 uint32_t sdFreeMB() { return freeMB; }
 

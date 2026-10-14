@@ -15,6 +15,125 @@
         const NUS_TX_UUID      = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
 
         let connectionType = null; // 'BLE' | 'SERIAL' | null
+        let sourceCapabilities = { capture: true, sd: true, source: 'legacy-esp32' };
+        let selectedScanSource = 'external';
+        let phoneNetHunter = false;
+        let phoneSession = null, phoneListeners = [], phoneRules = [], phoneObservations = new Map();
+        let phoneOptions = { scan_all: true, hunt: '', buzzer: false, beep_mask: 31 };
+
+        function phoneAvailable() {
+            return window.Capacitor && window.Capacitor.getPlatform() === 'android' &&
+                window.Capacitor.isPluginAvailable('PhoneScanner');
+        }
+        function phoneConfig() {
+            return Object.assign({ cfg: true, board: 'android-phone', ble_name: phoneNetHunter ? 'NetHunter phone' : 'This phone',
+                capture_supported: phoneNetHunter, capture_backend: phoneNetHunter ? 'nethunter-pcap' : 'android-api', sd_supported: false, ble_scan: true, wifi_scan: true,
+                capture_max_bytes: phoneNetHunter ? 65535 : 0,
+                sd: 0, led: 0, vol: 1, epoch: Math.floor(Date.now()/1000),
+                uptime: 0, attack: false, rx_only: false }, phoneOptions);
+        }
+        async function stopPhoneScan() {
+            phoneSession = null;
+            try { if (window.PhoneScanner) await window.PhoneScanner.stop(); } catch (e) {}
+            for (const listener of phoneListeners) await listener.remove();
+            phoneListeners = []; phoneObservations.clear();
+            if (connectionType === 'PHONE') { clearLiveState(); updateConnectionUI(false); }
+        }
+        async function startPhoneScan(nethunter = false) {
+            if (!phoneAvailable()) { showToast('Phone scanning requires the updated Android app', 'alert'); return; }
+            selectedScanSource = 'phone';
+            await disconnectDevice();
+            phoneNetHunter = nethunter;
+            phoneOptions = { scan_all: true, hunt: '', buzzer: false, beep_mask: 31 };
+            try {
+                if (nethunter) await window.PhoneScanner.authorizeRoot();
+                const response = await fetch('native-rules.json');
+                if (!response.ok) throw new Error('Phone signature rules unavailable');
+                phoneRules = await response.json();
+                phoneListeners.push(await window.PhoneScanner.addListener('observations', event => {
+                    if (connectionType !== 'PHONE' || event.session !== phoneSession) return;
+                    const now = Date.now();
+                    if(capturing&&phoneNetHunter&&typeof event.capture_wifi==='number'){capStat.wifi=event.capture_wifi;capStat.ble=event.capture_ble;capStat.remain=event.remain;paintCapture();}
+                    const targets = (event.targets || []).filter(row => window.SweepSources.fresh(row, now))
+                        .filter(row => row.decoded === true);
+                    for (const row of targets) phoneObservations.set(row.mac, row);
+                    for (const [mac, row] of phoneObservations) if (!window.SweepSources.fresh(row, now)) phoneObservations.delete(mac);
+                    while (phoneObservations.size > 256) phoneObservations.delete(phoneObservations.keys().next().value);
+                    ingestTargets(targets.filter(row => phoneOptions.scan_all || row.confidence >= 60));
+                    if (phoneOptions.hunt) {
+                        const target = targets.find(row => row.mac === phoneOptions.hunt);
+                        if (target) pushHuntSample(target.rssi, target.observed_at);
+                    }
+                    renderScope();
+                }));
+                phoneListeners.push(await window.PhoneScanner.addListener('state', event => {
+                    if (connectionType !== 'PHONE') return;
+                    const note = document.getElementById('scan-source-note');
+                    if (note) note.textContent = event.message;
+                    if (!event.running) stopPhoneScan();
+                }));
+                phoneListeners.push(await window.PhoneScanner.addListener('captureSaved', event => {
+                    capturing = false; capReleaseWake();
+                    capStat.wifi=event.wifi;capStat.ble=event.ble;
+                    paintCapture();
+                    const done=document.getElementById('cap-done');
+                    if(done){done.style.display='block';}
+                    document.getElementById('cap-summary').textContent=event.wifi+' full Wi-Fi frames and '+event.ble+' BLE advertisements saved.';
+                    document.getElementById('cap-path').textContent=event.path+'\n'+event.ble_path;
+                    document.getElementById('native-cap-path').textContent=event.path+'\n'+event.ble_path;
+                    document.getElementById('native-cap-path').hidden=false;
+                    document.getElementById('cap-log-step').style.display='none';
+                    document.getElementById('native-cap-export').hidden=false;
+                    showToast('Saved PCAP ('+event.wifi+' Wi-Fi frames) and BLE log ('+event.ble+' adverts): '+event.path,'check');
+                    window.lastPhoneCapture=event;
+                    refreshPhoneCaptures();
+                }));
+                const state = await window.PhoneScanner.start({ nethunter, rules: JSON.stringify(phoneRules) });
+                phoneSession = state.session;
+                clearLiveState(); updateConnectionUI(true, 'PHONE');
+                processIncomingData(JSON.stringify(phoneConfig()));
+                setSigUi(phoneRules);
+            } catch (e) { await stopPhoneScan(); showToast(String(e.message || e), 'alert'); }
+        }
+        async function savePhoneObservations() {
+            if (connectionType !== 'PHONE') return;
+            const observations = [...phoneObservations.values()].filter(row => window.SweepSources.fresh(row, Date.now()));
+            const path = 'signalsweep-phone-' + capStamp() + '.json';
+            try {
+                await window.CapFilesystem.writeFile({ path, directory: window.CapDirectory.Documents,
+                    encoding: window.CapEncoding.UTF8, data: JSON.stringify({ format: 'phone-observations-v1',
+                        source: 'android-phone', raw_wifi_packets: false, observations }, null, 2) });
+                showToast('Saved ' + observations.length + ' observations to Documents/' + path, 'check');
+            } catch (e) { showToast('Observation save failed: ' + e.message, 'alert'); }
+        }
+        async function refreshPhoneCaptures(){
+            const section=document.getElementById('native-captures'),list=document.getElementById('native-capture-list');
+            if(!section||!list||!phoneAvailable())return;
+            try{const data=await window.PhoneScanner.listCaptures();section.hidden=!data.captures.length;list.replaceChildren();
+                for(const row of data.captures){const button=document.createElement('button');button.className='ctrl-btn';button.style.cssText='display:block;width:100%;margin:8px 0;word-break:break-all;';button.textContent=new Date(row.modified).toLocaleString()+' · '+Math.round(row.bytes/1024)+' KB · '+row.name;button.onclick=()=>window.PhoneScanner.shareCapture(row).catch(e=>showToast(e.message,'alert'));list.appendChild(button);}
+            }catch(e){showToast('Phone capture list failed: '+e.message,'alert');}
+        }
+        async function exportPhoneCapture(){try{await window.PhoneScanner.shareCapture(window.lastPhoneCapture);}catch(e){showToast(e.message,'alert');}}
+        async function phoneCommand(cmd) {
+            if (cmd.raw === 'CMD:ATTACK:ON' || cmd.raw === 'CMD:ATTACK:OFF') {
+                phoneOptions.attack = cmd.raw.endsWith(':ON');
+                await window.PhoneScanner.configure({attack:phoneOptions.attack});
+                processIncomingData(JSON.stringify(phoneConfig())); return true;
+            }
+            if (cmd.raw === 'CMD:CFG' || cmd.time) { processIncomingData(JSON.stringify(phoneConfig())); return true; }
+            if (cmd.raw === 'CMD:SIGS') { setSigUi(phoneRules); return true; }
+            if (cmd.signatures || cmd.raw === 'CMD:SIGS:RESET') {
+                const rules=cmd.signatures || await (await fetch('native-rules.json')).json();
+                try{await window.PhoneScanner.configure({rules:JSON.stringify(rules),attack:!!phoneOptions.attack});phoneRules=rules;liveMatches={};setSigUi(phoneRules);renderScope();return true;}
+                catch(e){showToast('Signature update failed: '+e.message,'alert');return false;}
+            }
+            if (typeof cmd.scan_all === 'boolean') {
+                phoneOptions.scan_all = cmd.scan_all; liveMatches = {};
+            } else if (typeof cmd.hunt === 'string') phoneOptions.hunt = cmd.hunt;
+            else if (typeof cmd.beep_mask === 'number') phoneOptions.beep_mask = cmd.beep_mask;
+            else { showToast('This control requires an ESP32 scanner', 'alert'); return false; }
+            syncDeviceState(phoneConfig()); renderScope(); return true;
+        }
 
         function esc(v) {
             if (v == null) return '';
@@ -90,23 +209,25 @@
         // client (probe requests), undefined = not known / older firmware.
         // Band from the firmware's per-target channel ("ch"). Fixed literals
         // only -- nothing device-supplied reaches the chip text but a number.
-        function bandOfChannel(ch) {
+        function bandOfChannel(ch, frequency) {
+            if (frequency >= 5925) return '6';
+            if (frequency >= 4900) return '5';
             const c = Number(ch);
             if (c >= 1 && c <= 14) return '2.4';
             if (c >= 36 && c <= 177) return '5';
             return null;
         }
-        function bandChip(ch) {
-            const b = bandOfChannel(ch);
+        function bandChip(ch, frequency) {
+            const b = bandOfChannel(ch, frequency);
             return b ? '<span class="radio-badge chan">' + b + 'G · ch ' + Number(ch) + '</span>' : '';
         }
 
-        function radioBadges(protocol, ap, ch) {
+        function radioBadges(protocol, ap, ch, frequency) {
             const p = String(protocol || '');
             const wifi = ap === 1 ? ico('antenna') + ' AP' : ap === 0 ? ico('phone') + ' Client' : 'Wi‑Fi';
             return (p.indexOf('BLE')  >= 0 ? '<span class="radio-badge ble">BLE</span>' : '') +
                    (p.indexOf('WiFi') >= 0 ? '<span class="radio-badge wifi">' + wifi + '</span>' : '') +
-                   (p.indexOf('WiFi') >= 0 ? bandChip(ch) : '');
+                   (p.indexOf('WiFi') >= 0 ? bandChip(ch, frequency) : '');
         }
 
         // ---- Vendor names -------------------------------------------------
@@ -188,7 +309,7 @@
                     // a BLE sighting of a BLE+WiFi device) must not blank the badge.
                     ch: t.ch != null ? t.ch : (prev ? prev.ch : undefined),
                     confidence: t.confidence || 0,
-                    tier: t.tier || '', ts: now,
+                    tier: t.tier || '', ts: t.observed_at || now, source: t.source, freq: t.freq,
                     // Decoded ASTM Remote ID, present only on drones. The
                     // firmware omits any field it does not actually know, so
                     // undefined here means "unknown", never "zero".
@@ -702,7 +823,7 @@
                         (isHunted ? ' hunted' : '') +
                         '" style="border-left:4px solid ' + cat.color + '">' +
                     '<div class="scope-main">' +
-                        '<div class="scope-title">' + radioBadges(m.protocol, m.ap, m.ch) + (extraBadges || '') +
+                        '<div class="scope-title">' + radioBadges(m.protocol, m.ap, m.ch, m.freq) + (extraBadges || '') +
                             (cat.icon ? ico(cat.icon, cat.color) + ' ' : '') + '<span class="scope-name">' + esc(title) + '</span>' +
                             // A weak hint has no vendor to name -- cat.label is
                             // just the rule text, which already appears below.
@@ -1375,6 +1496,7 @@
         // "Done" on the finished-capture panel: reset back to the idle state
         // within the Finder page (does not close the page or stop anything).
         function closeCapture() {
+            window.lastPhoneCapture=null;document.getElementById('native-cap-export').hidden=true;document.getElementById('native-cap-path').hidden=true;
             lastAnalysis = null;
             paintAnalysis();
             if (!capturing) { capStat = { wifi: 0, ble: 0, drops: 0, remain: capReqSecs }; }
@@ -1394,10 +1516,10 @@
             if (!idle) return;
             idle.style.display = capturing ? 'none' : 'block';
             run.style.display = capturing ? 'block' : 'none';
-            done.style.display = 'none';
+            done.style.display = !capturing && window.lastPhoneCapture ? 'block' : 'none';
             const warn = document.getElementById('cap-usb-warn');
             const start = document.getElementById('cap-start-btn');
-            const usbOk = capIsUsb() && capNativeFs();
+            const usbOk = (capIsUsb() && capNativeFs()) || (connectionType === 'PHONE' && phoneNetHunter);
             const cardOk = sdState === 1;
             if (warn) warn.style.display = (usbOk || cardOk) ? 'none' : 'block';
             const sdRow = document.getElementById('cap-to-sd-row');
@@ -1410,12 +1532,18 @@
                 document.getElementById('cap-wifi').textContent = capStat.wifi;
                 document.getElementById('cap-ble').textContent = capStat.ble;
                 const d = document.getElementById('cap-drops');
-                d.textContent = capStat.drops;
+                d.textContent = capStat.drops == null ? 'unknown' : capStat.drops;
                 d.style.color = capStat.drops > 0 ? 'var(--accent-red)' : '';
             }
         }
 
         async function startCapture() {
+            if (connectionType==='PHONE' && phoneNetHunter) {
+                try { await window.PhoneScanner.captureStart({seconds:capReqSecs});capturing=true;capStat={wifi:0,ble:0,drops:null,remain:capReqSecs};capAcquireWake();paintCapture();showToast('Recording full Wi-Fi PCAP and raw BLE advertisements','check'); }
+                catch(e){showToast('Capture start failed: '+e.message,'alert');}
+                return;
+            }
+            if (!sourceCapabilities.capture) { showToast('Select NetHunter raw scan or an ESP32 scanner for raw capture', 'alert'); return; }
             const usb = capIsUsb();
             const box = document.getElementById('cap-to-sd');
             // Over Bluetooth the card is the only place a capture can go.
@@ -1484,7 +1612,8 @@
             paintCapture();
         }
 
-        function stopCaptureManual() {
+        async function stopCaptureManual() {
+            if(connectionType==='PHONE'&&phoneNetHunter){try{await window.PhoneScanner.captureStop();}catch(e){showToast(e.message,'alert');}return;}
             if (capturing) sendCommand({ raw: 'CMD:CAP:STOP' });
         }
 
@@ -1719,6 +1848,9 @@
         // wrong building. The old build discarded such fixes silently, so a
         // whole drive could record nothing while looking healthy. Show it.
         const FIX_ACCURACY_MAX_M = 50;
+        // A cold GNSS fix on ROMs without a network provider can take longer
+        // than 15 seconds. Still one-shot, fresh and bounded; never a trail.
+        const FIX_TIMEOUT_MS = 60000;
 
         // Deliberately NOT a live GPS state: there is no watchPosition here, so
         // this reports the last one-shot fix and nothing more. "Off" genuinely
@@ -1736,6 +1868,7 @@
                 case 'denied':   return { dot: 'bad',  text: 'Permission denied' };
                 case 'sysoff':   return { dot: 'bad',  text: 'Location is off' };
                 case 'failed':   return { dot: 'bad',  text: 'No fix' };
+                case 'timeout':  return { dot: 'warn', text: 'GPS timed out. Try outside with clear sky.' };
                 case 'fix': {
                     const a = Math.round(gpsState.acc);
                     return (gpsState.acc <= FIX_ACCURACY_MAX_M)
@@ -1829,7 +1962,9 @@
                     // is worth standing still outside for another few seconds.
                     const denied = err && (err.code === 1 ||
                         /denied|permission/i.test(err.message || ''));
-                    setGpsState(denied ? 'denied' : 'failed');
+                    const timedOut = err && (err.code === 3 || err.code === 'OS-PLUG-GLOC-0010');
+                    const disabled = err && err.code === 'OS-PLUG-GLOC-0007';
+                    setGpsState(disabled ? 'sysoff' : denied ? 'denied' : timedOut ? 'timeout' : 'failed');
                     reject(err);
                 };
                 if (window.Geolocation && window.Geolocation.getCurrentPosition) {
@@ -1842,7 +1977,7 @@
                         .catch(() => true)
                         .then((on) => {
                             if (on) {
-                                return window.Geolocation.getCurrentPosition({ enableHighAccuracy: true, timeout: 15000 })
+                                return window.Geolocation.getCurrentPosition({ enableHighAccuracy: true, timeout: FIX_TIMEOUT_MS, maximumAge: 0 })
                                     .then(done, failed);
                             }
                             setGpsState('sysoff');
@@ -1851,7 +1986,7 @@
                             reject(new Error('Location is off'));
                         });
                 } else if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(done, failed, { enableHighAccuracy: true, timeout: 15000 });
+                    navigator.geolocation.getCurrentPosition(done, failed, { enableHighAccuracy: true, timeout: FIX_TIMEOUT_MS, maximumAge: 0 });
                 } else {
                     setGpsState('failed');
                     reject(new Error('No geolocation available'));
@@ -2427,7 +2562,7 @@
         // ---- The Survey tab (investigation workflow) ----
         // openFinder/closeFinder keep their names: they are what the capture
         // flow and the onclicks already call, and they now just move tabs.
-        function openFinder() { showTab('survey'); }
+        function openFinder() { showTab('survey'); refreshPhoneCaptures(); }
         function closeFinder() { showTab('sweep'); }
         function unlockFindsView() {
             pendingPinAction = renderFinds;
@@ -2607,6 +2742,13 @@
         // connect (CMD:CFG) rather than have the firmware push it every second;
         // identity is static config and the 1 Hz payload is the tight budget.
         function applyConfigToSettings(cfg) {
+            sourceCapabilities = window.SweepSources ? window.SweepSources.capabilities(cfg) : sourceCapabilities;
+            const sourceNote = document.getElementById('scan-source-note');
+            if (sourceNote) sourceNote.textContent = sourceCapabilities.native
+                ? (phoneNetHunter ? 'NetHunter: shared decoders · raw Wi-Fi + BLE · Wi-Fi connection returns on Stop.' : 'Phone scan: shared BLE decoders and Wi-Fi APs. Wi-Fi updates are limited by Android. Select NetHunter for raw capture.')
+                : 'Scanner: ' + sourceCapabilities.source + (sourceCapabilities.capture ? ' · packet capture available' : ' · packet capture unavailable');
+            const save = document.getElementById('phone-save-observations');
+            if (save) save.hidden = !sourceCapabilities.native;
             const nameEl = document.getElementById('cfg-name');
             const rndEl  = document.getElementById('cfg-randmac');
             if (nameEl && typeof cfg.ble_name === 'string') nameEl.value = cfg.ble_name;
@@ -3917,6 +4059,10 @@
         let rxBuffer = '';
 
         function checkApiSupport() {
+            const rawButton = document.getElementById('btnNetHunterScan');
+            if(rawButton)rawButton.hidden=!phoneAvailable();
+            const phoneButton = document.getElementById('btnPhoneScan');
+            if (phoneButton) phoneButton.hidden = !phoneAvailable();
             const bleBadge = document.getElementById('bleSupportBadge');
             const serialBadge = document.getElementById('serialSupportBadge');
             // The Android app talks BLE through the Capacitor plugin and has no
@@ -4001,11 +4147,16 @@
                 // Done here rather than at each of the five connect sites.
                 // requestConfig() owns its own delay and retries -- the first
                 // attempt waits for the NUS notify subscription to come up.
-                requestConfig();
+                if (type !== 'PHONE') requestConfig();
                 setHostKeepalive(type === 'USB' || type === 'SERIAL');
             } else {
                 setHostKeepalive(false);
                 connectionType = null;
+                sourceCapabilities = { capture: true, sd: true, source: 'legacy-esp32' };
+                const sourceNote = document.getElementById('scan-source-note');
+                if (sourceNote) sourceNote.textContent = '';
+                const save = document.getElementById('phone-save-observations');
+                if (save) save.hidden = true;
                 // Stop showing the last board's settings as if they were this
                 // one's -- with two boards around that is how you mute the
                 // wrong device.
@@ -4145,7 +4296,7 @@
         let reconciling = false;
         async function reconcileConnection() {
             if (!(window.Capacitor && window.Capacitor.isNativePlatform() && window.BleClient)) return;
-            if (reconciling || connectionType === 'USB' || connectionType === 'SERIAL') return;
+            if (selectedScanSource === 'phone' || reconciling || connectionType === 'USB' || connectionType === 'SERIAL' || connectionType === 'PHONE') return;
             // initialize() raises the Nearby-devices prompt on a phone that has
             // never connected over BLE -- never on launch. A phone that has
             // connected before has granted it already.
@@ -4181,6 +4332,8 @@
         }
 
         async function connectWebBluetooth() {
+            await disconnectDevice();
+            selectedScanSource = 'external';
             if (window.Capacitor && window.Capacitor.isNativePlatform()) {
                 await connectNativeBluetooth();
                 return;
@@ -4302,6 +4455,8 @@
         // The modal button. Same shape as connectWebBluetooth forking to
         // connectNativeBluetooth: one control, the platform picks the path.
         async function connectUsb() {
+            await disconnectDevice();
+            selectedScanSource = 'external';
             if (nativeUsbAvailable()) return connectNativeUsb();
             return connectWebSerial();
         }
@@ -4504,6 +4659,7 @@
         }
 
         async function sendCommandNow(cmdObj) {
+            if (connectionType === 'PHONE') return phoneCommand(cmdObj);
             const jsonStr = (cmdObj.raw || JSON.stringify(cmdObj)) + '\n';
             if (connectionType === 'BLE') {
                 try {
@@ -4559,6 +4715,7 @@
 
         async function disconnectDevice() {
             cancelReconnect();
+            if (connectionType === 'PHONE' || phoneListeners.length) { await stopPhoneScan(); return; }
             if (bleDevice) {
                 if (bleDevice.gatt && bleDevice.gatt.connected) {
                     bleDevice.gatt.disconnect();
@@ -4738,6 +4895,7 @@
             });
         }
         document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState !== 'visible' && connectionType === 'PHONE') stopPhoneScan();
             if (document.visibilityState === 'visible') reconcileConnection();
         });
 

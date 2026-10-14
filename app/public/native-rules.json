@@ -1,0 +1,825 @@
+[
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "70:c9:4e",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "3c:91:80",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "d8:f3:bc",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "80:30:49",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "b8:35:32",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "14:5a:fc",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "74:4c:a1",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "08:3a:88",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "9c:2f:9d",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "c0:35:32",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "94:08:53",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "e4:aa:ea",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "f4:6a:dd",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "24:b2:b9",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "00:f4:8d",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "d0:39:57",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "e8:d0:fc",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "e0:4f:43",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "b8:1e:a4",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "70:08:94",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "58:8e:81",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "ec:1b:bd",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "58:00:e3",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "90:35:ea",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "5c:93:a2",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "64:6e:69",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "48:27:ea",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "14:b5:cd",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "04:0d:84",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "1c:34:f1",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "38:5b:44",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "94:34:69",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "b4:e3:f9",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "f0:82:c0",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC",
+    "category": "Flock Safety",
+    "oui": "e0:0a:f6",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock Safety MAC (registered block)",
+    "category": "Flock Safety",
+    "oui": "b4:1e:52",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "SoundThinking",
+    "category": "SoundThinking",
+    "oui": "d4:11:d6",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Flock battery (auth service)",
+    "category": "Flock Safety",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "e8ccbb38-9532-46a8-9fe5-1814df172e6f",
+    "weight": 80
+  },
+  {
+    "name": "Flock battery (safety service)",
+    "category": "Flock Safety",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "20c944c1-add2-42d7-a638-967ee9a26ff6",
+    "weight": 80
+  },
+  {
+    "name": "Flock BLE Name",
+    "category": "Flock Safety",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "flock",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock BLE Name",
+    "category": "Flock Safety",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "pigvision",
+    "service_uuid": ""
+  },
+  {
+    "name": "Flock BLE Name",
+    "category": "Flock Safety",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "fs_",
+    "service_uuid": ""
+  },
+  {
+    "name": "Axon Enterprise device",
+    "category": "Axon",
+    "oui": "00:25:df",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Axon Body 2 camera (pairing)",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 0,
+    "ssid_prefix": "AB2-"
+  },
+  {
+    "name": "Axon Body 3 camera (pairing)",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 0,
+    "ssid_prefix": "AB3-"
+  },
+  {
+    "name": "Axon Body 4 camera (pairing)",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 0,
+    "ssid_prefix": "AB4-"
+  },
+  {
+    "name": "Axon device hotspot",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 0,
+    "ssid_prefix": "AXON-"
+  },
+  {
+    "name": "Axon Signal System",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "fe6c"
+  },
+  {
+    "name": "Axon Signal System",
+    "category": "Axon",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "fe6d"
+  },
+  {
+    "name": "Cradlepoint Router",
+    "category": "Fleet / Infrastructure",
+    "oui": "00:30:44",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Peplink Router",
+    "category": "Fleet / Infrastructure",
+    "oui": "00:1a:dd",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "00:a0:d5",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "28:a3:31",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "50:13:9d",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "64:ce:6e",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "84:db:2f",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Sierra Wireless Infrastructure",
+    "category": "Fleet / Infrastructure",
+    "oui": "cc:93:4a",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": ""
+  },
+  {
+    "name": "Genetec (AutoVu / Sharp)",
+    "category": "Genetec ALPR",
+    "oui": "00:0a:b1",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Genetec (AutoVu / Sharp)",
+    "category": "Genetec ALPR",
+    "oui": "00:bf:15",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Genetec (AutoVu / Sharp)",
+    "category": "Genetec ALPR",
+    "oui": "0c:bf:15",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Neology (ALPR / tolling)",
+    "category": "Neology ALPR",
+    "oui": "00:17:3d",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "WatchGuard Video camera",
+    "category": "WatchGuard body cam",
+    "oui": "00:1d:96",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Digital Ally camera",
+    "category": "Digital Ally body cam",
+    "oui": "00:23:bd",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Ubicquia (streetlight node)",
+    "category": "Ubicquia",
+    "oui": "94:7b:be",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "00:04:7d",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "00:18:85",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "00:1f:92",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "4c:cc:34",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "b8:e2:8c",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "10:74:6f",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Motorola Solutions device",
+    "category": "Motorola Solutions",
+    "oui": "9c:86:2b",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Verkada camera",
+    "category": "Verkada",
+    "oui": "e0:a7:00",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Avigilon Alta device",
+    "category": "Avigilon Alta",
+    "oui": "70:1a:d5",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Axis Communications camera",
+    "category": "Axis Communications",
+    "oui": "00:40:8c",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Axis Communications camera",
+    "category": "Axis Communications",
+    "oui": "b8:a4:4f",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Axis Communications camera",
+    "category": "Axis Communications",
+    "oui": "ac:cc:8e",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Axis Communications camera",
+    "category": "Axis Communications",
+    "oui": "e8:27:25",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Ray-Ban / Oakley Meta glasses",
+    "category": "Smart glasses",
+    "oui": "",
+    "mfg_id": "0x0D53",
+    "device_name": "",
+    "service_uuid": "fd5f",
+    "weight": 70
+  },
+  {
+    "name": "Snap Spectacles",
+    "category": "Smart glasses",
+    "oui": "",
+    "mfg_id": "0x03C2",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Flipper Zero (service UUID)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "3081",
+    "weight": 80
+  },
+  {
+    "name": "Flipper Zero (service UUID)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "3082",
+    "weight": 80
+  },
+  {
+    "name": "Flipper Zero (service UUID)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "3083",
+    "weight": 80
+  },
+  {
+    "name": "STM32WB address (Flipper Zero uses this)",
+    "category": "Hacking gear",
+    "oui": "80:e1:26",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "STM32WB address (Flipper Zero uses this)",
+    "category": "Hacking gear",
+    "oui": "80:e1:27",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Flipper Devices (company ID)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "0x0E29",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Flipper Devices (MAC)",
+    "category": "Hacking gear",
+    "oui": "0c:fa:22",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70
+  },
+  {
+    "name": "Name contains Flipper",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "flipper",
+    "service_uuid": "",
+    "weight": 60
+  },
+  {
+    "name": "Pineapple management AP",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70,
+    "ssid_prefix": "Pineapple_"
+  },
+  {
+    "name": "OUI-Spy selector AP",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70,
+    "ssid_prefix": "oui-spy"
+  },
+  {
+    "name": "OUI-Spy Detector AP",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70,
+    "ssid_prefix": "snoopuntothem"
+  },
+  {
+    "name": "OUI-Spy Foxhunter AP",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70,
+    "ssid_prefix": "foxhunter"
+  },
+  {
+    "name": "OUI-Spy capture AP (PCAP / BLE Sniff)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 70,
+    "ssid_prefix": "ouispy-"
+  },
+  {
+    "name": "'pwned' SSID (ESP deauther default)",
+    "category": "Hacking gear",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "",
+    "weight": 60,
+    "ssid_prefix": "pwned"
+  },
+  {
+    "name": "Tile Tracker",
+    "category": "Tracker",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "feed"
+  },
+  {
+    "name": "Tile Tracker",
+    "category": "Tracker",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "feec"
+  },
+  {
+    "name": "Samsung SmartTag",
+    "category": "Tracker",
+    "oui": "",
+    "mfg_id": "",
+    "device_name": "",
+    "service_uuid": "fd5a"
+  }
+]
