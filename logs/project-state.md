@@ -43,7 +43,7 @@ Existing repository G:\esp32\signalSweep\SignalSweep on Windows/PowerShell. Plat
 
 ## Current Work
 Location handling updated on 2026-10-14: fresh one-shot requests allow 60 seconds, preserve the 50 m pin threshold and show timeout guidance. Local APK built/installed/launched, SHA256 c300413d21f15faa850ce89238de1c0294e17cf906b5719c1ef523d883cec0c1. Location, source and lifecycle regressions pass. This supersedes the older APK hash below; firmware unchanged.
-GitHub-ready development summary prepared locally on 2026-10-14. Personal fork mrmcgrain/SignalSweep and companion GitHub Pages publication authorized 2026-10-14; setup in progress. Firmware release/version choice and public Android signing remain undecided. Current local APK and firmware hashes match the final hardware report.
+GitHub-ready development summary prepared locally on 2026-10-14. Personal fork mrmcgrain/SignalSweep and companion GitHub Pages publication authorized 2026-10-14; setup completed and live at https://mrmcgrain.github.io/SignalSweep/app/. Firmware release/version choice and public Android signing remain undecided. Current local APK and firmware hashes match the final hardware report.
 Requested shared-engine updates, PC/OnePlus USB raw capture and physical source swaps completed 2026-10-14 13:39:00 -07:00. Last observed phone connection was S3 USB with live telemetry and no active capture. Phone Wi-Fi/Bluetooth were normal with no monitor lock. Temporary Wi-Fi ADB was disabled and port 5555 closure verified. Final Local APK installed and pulled hash matched 35ac7202b980a9b010b0d3257efd8939b449fdb3e30a00529c81e5b9f3d7e52b.
 
 ## TODO
@@ -76,4 +76,7 @@ Project files are authoritative. Mirror F:\Obsidian\SecondBrain\01-Projects\Sign
 - Before publication, 259 changed/untracked/local-config files copied with SHA-256 verification into .git/codex-preservation/20261014-155203. Existing source/diagnostic bytes unchanged; no reset, clean, stash or reclone.
 - firmware/diagnostics remains private and ignored alongside backups/local config/signing files. No public APK or firmware release prepared in this turn.
 - Local selftest, source, lifecycle and location checks and Vite build passed. Initial selftest from app/ failed on relative firmware path; root invocation passed.
-- npm audit reports seven existing advisories, including Capacitor Android critical plus build/native tooling dependencies. No dependency changes made. Deployed browser behavior and source revision still pending verification.
+- npm audit reports seven existing advisories, including Capacitor Android critical plus build/native tooling dependencies. No dependency changes made. Pages deployment 38650781044 succeeded for source commit 918d2187611d7be55a6c9817b1bac55435577141. HTTPS root redirect, deployment metadata and app assets verified. Desktop scanner chooser and mobile Settings rendered with zero browser console errors; mobile width/scrollWidth both 390. No new hardware connection test performed.
+
+- Source changes committed/pushed to personal main in 918d218; follow-up hosting records committed separately. main tracks origin/main. Repository-local Git identity uses verified mrmcgrain account and GitHub noreply email.
+- Hosting guide: docs/github-pages.md. Repository homepage points to the companion. Screenshot artifacts are private/ignored under output/playwright; verification browser closed.

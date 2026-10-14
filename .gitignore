@@ -77,3 +77,4 @@ firmware/diagnostics/
 
 # Local browser verification artifacts
 output/playwright/
+.playwright-cli/

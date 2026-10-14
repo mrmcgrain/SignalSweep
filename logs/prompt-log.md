@@ -830,3 +830,27 @@ I also found local bootloader dumps and diagnostic dependencies that should stay
 The companion app checks and production build pass. The first test run failed because I launched it from `app/`; rerunning from the repository root passed. The preservation check also confirms that the existing source changes remain unchanged.
 
 GitHub Pages is now configured to use Actions. I’m preparing the fork commit, then I’ll verify the deployed app in a browser. The dependency audit still reports seven existing advisories; I’ll record those without changing dependency versions during this hosting setup.
+### assistant commentary
+The source changes are now committed and pushed to your fork. The Pages build passed on GitHub, and deployment is queued. The original firmware/APK release job was correctly skipped.
+
+This folder now pushes to `mrmcgrain/SignalSweep`; the original repo is retained as `upstream`. I’ll check the live URL and page assets once deployment finishes.
+### assistant commentary
+The app is live at [mrmcgrain.github.io/SignalSweep/app/](https://mrmcgrain.github.io/SignalSweep/app/). The site root redirects there, and the deployment metadata confirms it came from your fork’s commit.
+
+Browser checks found no console errors, and the app’s scripts, styles, fonts and data files returned successfully. The mobile Settings view also fits a 390-pixel viewport without horizontal overflow. I used the Playwright skill for these checks and am finishing the project records and final sync.
+### assistant final
+**Done. Your SignalSweep web app is live:**
+
+[Open SignalSweep](https://mrmcgrain.github.io/SignalSweep/app/) · [Your GitHub fork](https://github.com/mrmcgrain/SignalSweep)
+
+- Kept using `G:\esp32\signalSweep\SignalSweep`.
+- Committed and pushed the existing source changes to your fork.
+- Set `origin` to `mrmcgrain/SignalSweep` and kept the original repo as `upstream`.
+- Preserved private firmware backups, diagnostics and local board configuration on disk, excluded from publication. A verified recovery snapshot is also saved under `.git/codex-preservation/20261014-155203`.
+- Added automatic Pages deployment when app changes are pushed to `main`. The site root redirects to `/app/`.
+
+The [deployment succeeded](https://github.com/mrmcgrain/SignalSweep/actions/runs/38650781044). Existing app checks passed locally and on GitHub; live desktop and mobile browser checks found no console errors or missing assets.
+
+Project records and Obsidian mirrors are updated and verified. The seven existing npm dependency advisories remain unresolved. This deployment publishes the web companion; firmware and Android APK releases remain separate.
+
+Status: finalized for emission; reconcile delivery next turn.

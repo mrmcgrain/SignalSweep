@@ -94,3 +94,10 @@ Evidence: [assessment](docs/cardputer-adv-port.md), [history](logs/conversation-
 
 ### Hosting recommendation, updated 2026-10-14T15:50:22.8760365-07:00
 - Verified account mrmcgrain and upstream remote. Recommended personal fork plus Pages; VPS can serve app/dist. No publication or Git changes performed. Local changes still need review/commit/push.
+
+### Personal fork and Pages, updated 2026-10-14T15:57:07.5441521-07:00
+- Preserved local work and 259-file private recovery snapshot. Source changes committed/pushed to mrmcgrain/SignalSweep in 918d218; existing project folder retained, upstream remote kept.
+- App-only Pages deployment succeeded in run 38650781044. Root redirect and source-commit metadata verified at https://mrmcgrain.github.io/SignalSweep/app/.
+- Existing app checks passed locally and in CI. Desktop/mobile rendering and asset checks passed without console errors; mobile Settings has no horizontal overflow at 390 px.
+- Private backups/diagnostics/local config excluded and retained. No binary release, hardware rewrite or portfolio changes. Seven existing npm advisories unresolved.
+- Evidence: [hosting guide](docs/github-pages.md), [history](logs/conversation-log.md).

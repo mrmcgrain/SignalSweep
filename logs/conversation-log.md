@@ -320,3 +320,35 @@ Errors/Fixes:
 
 ### Next Steps
 - Choose publication destination and authorize setup when ready.
+
+## 2026-10-14T15:57:07.5441521-07:00
+
+### User Request
+Fork to mrmcgrain, configure GitHub Pages, retain existing folder and all changes.
+
+### Codex Response
+Existing fork already matched base 45a1351. Preserved 259 files in verified private snapshot, connected origin to personal fork and kept upstream, committed source changes in 918d218 and deployed the web companion. App live at https://mrmcgrain.github.io/SignalSweep/app/; repository root redirects there. No firmware/APK publication.
+
+### Actions
+Commands:
+- git remote rename origin upstream; git remote add origin personal fork; gh repo set-default; git push -u origin main.
+- Created Pages via gh API with build_type=workflow; set repository homepage; watched workflow 38650781044 to success.
+- npm ci, four existing app checks from repository root and Vite build passed. CI checks/build/deploy passed.
+- Credential-pattern review found only existing GH_TOKEN variable reference; no literal credential found. Reviewed staged paths for private/generated files.
+- HTTPS checks verified source metadata and app JS/CSS/fonts/vendor data. Playwright desktop/mobile screenshots and Settings interaction passed; mobile width=scrollWidth=390, no console errors. Browser closed.
+- Rechecked snapshot: original source and diagnostics unchanged; only intended records/ignore changes differ.
+Files changed:
+- Existing ADV/S3/Android work and records committed, dedicated pages workflow, upstream release guard, root redirect, hosting guide and README links.
+- Ignore private firmware diagnostics and browser artifacts; retain files locally. No dependencies changed.
+Decisions:
+- App-only Pages publication, separate from firmware/APK releases. No portfolio or upstream changes.
+Errors/Fixes:
+- Initial selftest ran from app/ and could not find relative firmware test; root invocation passed.
+- Git identity absent; set repository-local verified mrmcgrain identity with GitHub noreply address, then commit succeeded.
+- CLI network command renamed to requests; corrected inspection. Existing npm audit: seven advisories, unresolved.
+Recovery:
+- .git/codex-preservation/20261014-155203 contains verified copies, manifest, binary diff and previous Git config.
+
+### Next Steps
+- Future app changes deploy on main pushes or manual workflow dispatch.
+- Existing dependency advisories and hardware/Android release gates remain separate follow-up work.
